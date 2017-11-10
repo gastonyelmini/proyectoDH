@@ -28,6 +28,7 @@ class User_edit_controller extends Controller
 
             $id = auth()->user()->id;
             $input = array_filter($request->except(['_token']));
+            
             User::where('id', $id)->update($input);
             // dd(auth()->user());
             //dd($input);
