@@ -53,6 +53,9 @@
 
                                 <ul class="dropdown-menu">
                                     <li>
+                                        <a href="{{ route('add-project') }}">
+                                            Add project
+                                        </a>
                                         <a href="{{ route('edit-user') }}">
                                             Edit
                                         </a>

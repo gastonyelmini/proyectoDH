@@ -9,19 +9,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/edit-user', function (){
-  return view('edit-user');
-});
-
-Route::post('/edit-user', 'User_edit_controller@updateUserInfo');
+Route::post('/edit-user', 'User_edit_controller@updateUserInfo')->name('edit-user');
 
 /*
 Rutas relacionadas con proyectos
 */
-Route::get('/add-project', 'AddProjectController@showForm');
+Route::get('/add-project', 'AddProjectController@showForm')->name('add-project');
 
 //Post de add-project
-Route::post('/add-project', 'AddProjectController@addProject');
+Route::post('/add-project', 'AddProjectController@addProject')->name('add-project');
 
 Route::get('/edit-user', 'User_edit_controller@displayView')->name('edit-user');
 		
