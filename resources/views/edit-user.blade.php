@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+<?php $user = DB::table('users')->where('id', auth()->user()->id)->get() ?>
+
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -15,7 +18,7 @@
                             <label for="name" class="col-md-4 control-label">Name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}"  autofocus>
+                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name', $user[0]->name) }}"  autofocus>
 
                                 @if ($errors->has('name'))
                                     <span class="help-block">
@@ -29,7 +32,7 @@
                             <label for="lastName" class="col-md-4 control-label">Last Name</label>
 
                             <div class="col-md-6">
-                                <input id="lastName" type="text" class="form-control" name="lastName" value="{{ old('lastName') }}"  autofocus>
+                                <input id="lastName" type="text" class="form-control" name="lastName" value="{{ old('lastName', $user[0]->lastName) }}"  autofocus>
 
                                 @if ($errors->has('lastName'))
                                     <span class="help-block">
@@ -43,7 +46,7 @@
                             <label for="phone" class="col-md-4 control-label">Phone</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone') }}"  autofocus>
+                                <input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone', $user[0]->phone) }}"  autofocus>
 
                                 @if ($errors->has('phone'))
                                     <span class="help-block">
@@ -57,7 +60,7 @@
                             <label for="ocupation" class="col-md-4 control-label">Ocupation</label>
 
                             <div class="col-md-6">
-                                <input id="ocupation" type="text" class="form-control" name="ocupation" value="{{ old('ocupation') }}"  autofocus>
+                                <input id="ocupation" type="text" class="form-control" name="ocupation" value="{{ old('ocupation', $user[0]->ocupation) }}"  autofocus>
 
                                 @if ($errors->has('ocupation'))
                                     <span class="help-block">
@@ -71,7 +74,7 @@
                             <label for="description" class="col-md-4 control-label">Description</label>
 
                             <div class="col-md-6">
-                                <input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}"  autofocus>
+                                <input id="description" type="text" class="form-control" name="description" value="{{ old('description', $user[0]->description) }}"  autofocus>
 
                                 @if ($errors->has('description'))
                                     <span class="help-block">
@@ -85,7 +88,7 @@
                             <label for="adress" class="col-md-4 control-label">Adress</label>
 
                             <div class="col-md-6">
-                                <input id="adress" type="text" class="form-control" name="adress" value="{{ old('adress') }}"  autofocus>
+                                <input id="adress" type="text" class="form-control" name="adress" value="{{ old('adress', $user[0]->adress) }}"  autofocus>
 
                                 @if ($errors->has('adress'))
                                     <span class="help-block">
