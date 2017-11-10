@@ -1,0 +1,616 @@
+
+// LANDING PAGE STYLE
+//
+// Sizes for refer to the mobile version.
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video
+	margin: 0
+	padding: 0
+	border: 0
+	vertical-align: baseline
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+	display: block
+
+body
+	line-height: 1
+	overflow-x: hidden
+
+ol, ul
+	list-style: none
+
+blockquote, q
+	quotes: none
+
+blockquote:before, blockquote:after,
+q:before, q:after
+	content: ''
+	content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
+
+
+////////////////////////
+
+*
+  box-sizing: border-box
+
+body
+  background-color: #0F68A1
+  margin: 0
+  box-sizing: border-box
+
+a
+  text-decoration: none
+  color: white
+
+
+header
+  heigth: 400px
+  overflow: hidden
+  padding: 20px
+  display: flex
+  align-items: center
+  justify-content: flex-end
+  justify-content: space-between
+
+
+  // Logo a cambiar
+  .logo
+    float: left
+    width: 60px
+    height: 60px
+    border-radius: 50%
+    border: 7px solid white
+    z-index: 3
+
+
+  .header-right
+    display: flex
+    justify-content: flex-end
+    align-items: center
+		animation: fadein 2s
+
+		.faq
+			font-family: helvetica
+			margin-right: 20px
+
+		.header-right a
+			text-transform: uppercase
+			font-size: 16px
+		.header-right a:hover
+			color: #fff
+
+  .logIn
+    font-family: helvetica
+
+
+  .register
+    a
+      display: flex
+      font-family: helvetica
+      text-decoration: none
+      background-color: #239DE4
+      padding: 8px
+      border-radius: 5px
+      box-shadow: 0 2px 5px rgba(0,0,0,0.30)
+      margin-left: 20px
+      display: none
+
+
+
+// Top text alignment, center and padding.
+.topText
+  z-index: 2
+  display: block-flex
+  position: absolute
+  justify-content: center
+  width: 100%
+  top: 225px
+
+
+  h1
+    font:
+      size: 19px
+      family: helvetica
+      weight: bold
+    text-align: center
+    color: white
+    line-height: 32px
+    max-width: 700px
+    margin: 0 auto
+    margin-bottom: 10px
+    padding: 10px
+
+  p
+    font:
+      family: helvetica
+      size: 16px
+    color: #ECECEC
+    max-width: 600px
+    text-align: center
+    line-height: 29px
+    margin: 0 auto
+    padding: 10px
+
+// Registration button creation
+.green-register
+  background-color: #5DB348
+  padding: 10px
+  display: block
+  width: 200px
+  margin: 0 auto
+  margin-top: 20px
+  border-radius: 5px
+  text-align: center
+  color: white
+  text-decoration: none
+  font:
+    family: helvetica
+    weight: bold
+  box-shadow: 0 5px 10px rgba(0,0,0,0.30)
+// FINISH: Top text alignment, center and padding.
+
+
+
+// background circle and line building
+.contenedorCirculo
+  // centering and avoiding conflicts between circle and viewport
+  display: flex
+  width: 100vw
+  height: 1000px
+  overflow: hidden
+  justify-content: center
+  position: absolute
+  z-index: 1
+
+
+  .circle
+    width: 500px
+    height: 500px
+    border-radius: 50%
+    border: 90px solid #0F6EA5
+    position: absolute
+    left: 50%;
+    top: 25%;
+    transform: translate(-50%,-50%);
+
+
+  .line
+    width: 90px
+    height: 900px
+    background-color: #0F6EA5
+    position: absolute
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%,-50%);
+
+// FINISH: background circle and line building
+
+
+// MOCKUPS
+// Dinamic diagonal container
+.diagonal
+	width: 100%
+	height: 0px
+	position: absolute
+	top: 730px
+	z-index: 4
+	height: 280px
+	background-color: #229EE6
+	transform-origin: top right
+	transition: all ease-in-out 200ms
+
+.diagonal-on
+	height: 280px
+	transform: skewY(-8deg)
+
+
+.dinamic-diagonal-container
+  width: 100%
+  height: 1300px
+  background-color: #229EE6
+  position: relative
+  z-index: 4
+  top: 900px
+  overflow: hidden
+
+
+  .mockup-mac
+    width: 100%
+    display: block
+    position: absolute
+    top: 100px
+    right: 0
+		z-index:
+
+  .mockup-text
+    position: relative
+    top: 400px
+    font:
+      family: helvetica
+      size: 19px
+    color: white
+    line-height: 30px
+    text-align: center
+    padding: 40px
+
+  .mockup-ipad
+    width: 100%
+    display: block
+    position: absolute
+    float: left
+    top: 750px
+
+// END MOCKUPS
+
+
+
+// TIME LINE section
+
+.time-line-container
+	height: 3500px
+	width: 100%
+	background-color: #1174B3
+	position: absolute
+	top: 2100px
+	z-index: 2
+	overflow: hidden
+
+.nodoCompleto1
+	display: flex
+	justify-content: center
+
+.contenedorNodo
+	display: flex
+	justify-content: center
+
+
+.dinamicCircle
+	position: absolute
+	top: 20px
+	left: 50%
+	top: 25%
+	transform: translate(-50%,-50%)
+
+.contenedorNodo2
+	position: absolute
+	top: 90px
+	z-index: 10
+	left: 50%
+	top: 24.97%
+	transform: translate(-50%,-50%)
+
+.boton
+  width: 210px
+  height: 210px
+  border-radius: 50%
+  background-color: rgb(30, 213, 255)
+  box-shadow: 0 0 15px 0
+  border: 4px solid white
+  transition: all ease-in-out 300ms
+
+.boton:hover
+  transform: scale(1.03)
+  background-color: rgb(30, 233, 255)
+  box-shadow: 0 0 10px 0
+
+.mockup-branch-line
+	position: absolute
+	top: 960px
+	left: 50%
+	width: 200px
+	margin: 0 auto
+	z-index: -1
+	padding-right: 50px
+
+.line-down
+	position: absolute
+	display: block
+	width: 10px
+	height: 1090px
+	left: 50%
+	transform: translateX(-50%)
+	background-color: #E1EEEE
+	z-index: -1
+	top: 850px
+
+.line-down-red
+	position: absolute
+	display: block
+	width: 100%
+	height: 600px
+	background-color: #FF6161
+
+.mockup-line
+	position: absolute
+	display: block
+	left: 50%
+	transform: translateX(-50%)
+	top: 1860px
+	width: 300px
+
+.time-line-container
+	padding: 20px
+	padding-top: 200px
+	display: inline-block
+	position: absolute
+	margin: 0 auto
+	font:
+		family: helvetica
+		size: 19px
+	text-align: center
+	margin-top: 30px
+
+.time-line-container
+	p
+		line-height: 31px
+		max-width: 700px
+		color: #FFFFFF
+		margin-top: 175px
+		// center max width text
+		position: relative
+		left: 50%
+		transform: translateX(-50%)
+
+// END OF TIME LINE section
+
+// last section time line
+.diagonal-b
+	width: 100%
+	height: 300px
+	position: absolute
+	top: 5400px
+	z-index: 2
+	background-color: #E7EEED
+	transform-origin: top right
+	transition: all ease-in-out 200ms
+
+.last-section
+	background-color: #E7EEED
+	width: 100vw
+	height: 1500px
+	position: relative
+	top: 4200px
+
+	.container
+		padding-top: 210px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		overflow: hidden
+		z-index: 10
+
+		p
+			font:
+				family: helvetica
+				size: 19px
+			text-align: center
+			line-height: 30px
+			padding: 20px
+			color: #4D4D4D
+			max-width: 770px
+			// center max width text
+			position: relative
+			left: 50%
+			transform: translateX(-50%)
+
+		.nodo-last
+			display: block
+			position: relative
+			margin: 0 auto
+			width: 200px
+			margin-bottom: 160px
+			z-index: 2
+
+		.infinite-line
+			width: 100%
+			height: 10px
+			background-color: white
+			position: relative
+			bottom: 268px
+			margin-left: 50%
+			z-index: 1
+
+			.red-line
+				height: 100%
+				width: 300px
+				background-color: #FD6466
+
+		.mini-line
+			display: block
+			width: 300px
+			margin: 0 auto
+			margin-top: 200px
+
+// END: last section time line
+
+// footer
+footer
+	width: 100%
+	min-height: 530px
+	background-color: #F1F5F5
+	position: relative
+	top: 4050px
+	padding: 140px 30px 30px 30px
+
+	p
+		text-align: center
+		font:
+			size: 19px
+			family: helvetica
+		line-height: 30px
+		margin-bottom: 60px
+		color: #4D4D4D
+		max-width: 778px
+		// center max width text
+		position: relative
+		left: 50%
+		transform: translateX(-50%)
+
+	.green-register
+		margin-bottom: 100px
+
+// END OF: footer
+
+// Copyright section
+.end
+	width: 100%
+	height: 50px
+	background-color: white
+	padding: 20px
+
+	p
+		font:
+			family: helvetica
+			size: 10px
+		color: #373737
+
+.positionIndex
+	position: relative
+	top: 4040px
+
+// END OF: Copyright section
+
+// ANIMATIONS
+.project
+	opacity: 0
+	transition: all ease-in-out 1s
+
+
+.project.fade-in
+	opacity: 1
+
+// LOG IN STYLE
+.remember
+	display: inline !important
+
+.positionLogIn
+	position: absolute
+	bottom: 0px
+
+// END OF LOG IN STYLE
+
+// RESPONSIVE
+// LARGE MOBILE
+@media (min-width: 425px)
+	.topText h1
+		font-size: 28px
+		line-height: 38px
+
+	.topText p
+		font-size: 17px
+		line-height: 27px
+
+	// MOCKUP SECTION
+	.dinamic-diagonal-container .mockup-mac
+		width: 350px
+    display: block
+    position: absolute
+    top: 100px
+    right: 0
+
+	.dinamic-diagonal-container .mockup-text
+		font-size: 22px
+		line-height: 32px
+		padding: 40px
+
+	.dinamic-diagonal-container .mockup-ipad
+		width: 350px
+    display: block
+    position: absolute
+    float: left
+    top: 750px
+
+	// LINE SECTION
+	.time-line-container p
+		font-size: 22px
+		line-height: 35px
+
+	.mockup-branch-line
+		padding-right: 30px
+
+	// MINI LINE SECTION
+	.last-section .container p
+		font-size: 22px
+		line-height: 35px
+
+	// FOOTER
+	footer p
+		font-size: 21px
+		line-height: 32px
+
+//TABLET
+@media (min-width: 768px)
+	// TOP SECTION
+	header .register a
+		display: block
+
+	.topText h1
+		font-size: 33px
+		line-height: 42px
+
+	.topText p
+		font-size: 19px
+		line-height: 30px
+
+	// MOCKUP SECTION
+	.dinamic-diagonal-container .mockup-mac
+		width: 450px
+
+	.dinamic-diagonal-container .mockup-text
+		font-size: 30px
+		line-height: 41px
+		padding: 90px
+
+	.dinamic-diagonal-container .mockup-ipad
+		width: 450px
+
+	// LINE SECTION
+	.time-line-container p
+		font-size: 25px
+		line-height: 38px
+
+	.mockup-branch-line
+		padding-right: 0px
+
+	// MINI LINE SECTION
+	.last-section .container p
+		font-size: 25px
+		line-height: 38px
+
+	// FOOTER
+	footer p
+		font-size: 25px
+		line-height: 38px
+
+// LAPTOP
+@media (min-width: 1024px)
+	.dinamic-diagonal-container .mockup-text
+		font-size: 30px
+		line-height: 41px
+		padding: 140px
+
+	// MOCKUP SECTION
+	.dinamic-diagonal-container .mockup-mac
+		width: 550px
+
+	.dinamic-diagonal-container .mockup-ipad
+		width: 550px

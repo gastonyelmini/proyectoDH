@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Auth::routes();
@@ -24,3 +24,11 @@ Route::get('/edit-user', function (){
 });
 
 Route::post('/edit-user', 'User_edit_controller@updateUserInfo');
+
+/*
+Rutas relacionadas con proyectos
+*/
+Route::get('/add-project', 'AddProjectController@showForm');
+
+//Post de add-project
+Route::post('/add-project', 'AddProjectController@addProject');

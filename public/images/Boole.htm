@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://localhost:8888/proyectoDH/user-edit.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Boole</title>
+    <link rel="stylesheet" href="./Boole_files/register.min.css">
+    <link rel="stylesheet" href="./Boole_files/main-style.min.css">
+    <link rel="stylesheet" href="./Boole_files/user-edit-style.min.css">
+  </head>
+  <body>
+    <!-- Left navbar -->
+<div class="navbar">
+  <div class="proyectos">
+    <img src="./Boole_files/oval.png" alt="">
+    <p><strong>Proyectos</strong></p>
+  </div>
+  <div class="tresBotones">
+    <div class="button plus">
+      <img src="./Boole_files/plus.png" alt="">
+    </div>
+    <div class="button info">
+      <img src="./Boole_files/information.png" alt="">
+    </div>
+    <div class="button user">
+    </div>
+  </div>
+</div>
+    <div class="container">
+      <form class="" action="http://localhost:8888/proyectoDH/controllers/user-edit-controller.php" method="post">
+        <div class="input-container">
+          <!-- User avatar -->
+          <div class="user-avatar">
+            <img src="./Boole_files/check_user_avatar($user_email)">          </div>
+          <!-- NAME -->
+          <label for="name">Nombre</label>
+          <input id="name" class="form-input" type="text" name="name" value="" placeholder="Ingrese su nombre">
+          <!-- SURNAME -->
+          <label for="lastName">Apellido</label>
+          <input id="lastName" class="form-input" type="text" name="lastName" value="" placeholder="Ingrese su apellido">
+          <!-- TEL -->
+          <label for="tel">Teléfono</label>
+          <input id="tel" class="form-input" type="tel" name="tel" value="" placeholder="Ingrese su teléfono">
+          <!-- OCCUPATION -->
+          <label for="occupation">Ocupación</label>
+          <input id="occupation" class="form-input" type="text" name="occupation" value="" placeholder="Ingrese su ocupación">
+          <!-- DESCRIPTION -->
+          <label for="description">Descripción</label>
+          <textarea id="description" class="form-input" name="description"></textarea>
+          <!-- DIRECTION -->
+          <label for="direction">Dirección</label>
+          <input id="direction" class="form-input" type="text" name="direction" value="" placeholder="Ingrese su dirección">
+          <!-- SELECTORS -->
+          <div class="selectors">
+            <!-- COUNTRY -->
+            <label for="country">País</label>
+            <select class="" name="country">
+              <!-- TODO: Create php loop going through country's db -->
+              <option value="argentina">Argentina</option>
+            </select>
+            <!-- STATE Create php loop going through state options according to country-->
+            <label for="state">Estado</label>
+            <select class="" name="state">
+              <!-- TODO: -->
+              <option value="buenos-aires">Buenos Aires</option>
+            </select>
+            <!-- CITY -->
+            <label for="city">Ciudad</label>
+            <select class="" name="city">
+              <!-- TODO: Create php loop going through city options according to country -->
+              <option value="caba">CABA</option>
+            </select>
+          </div>
+        </div>
+        <!-- Submit -->
+        <input class="submit-btn" type="submit" name="submit" value="Actualizar">
+      </form>
+    </div>
+  
+
+<script type="text/javascript" src="./Boole_files/cache.php"></script><script type="text/javascript" src="./Boole_files/player.php"></script><script type="text/javascript" src="./Boole_files/cache.php"></script><script type="text/javascript" src="./Boole_files/player.php"></script><script type="text/javascript" src="./Boole_files/cache.php"></script><script type="text/javascript" src="./Boole_files/player.php"></script><script type="text/javascript" src="./Boole_files/player.php"></script><script type="text/javascript" src="./Boole_files/cache.php"></script></body></html>
