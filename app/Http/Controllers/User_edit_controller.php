@@ -32,7 +32,10 @@ class User_edit_controller extends Controller
             User::where('id', $id)->update($input);
             // dd(auth()->user());
             //dd($input);
-            return view('edit-user');
+            $newValues = implode(', ',$input);
+            return redirect()
+                   ->route('edit-user')
+                   ->with('info', 'Information edited: ' . $newValues);
     }
 }
 

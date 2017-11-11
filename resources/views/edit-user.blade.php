@@ -5,6 +5,14 @@
 
 
 <div class="container">
+    @if (Session::get('info'))
+        <div class="row">
+            <div class="col-md-12">
+                <p class="alert alert-info">{{ Session::get('info') }}</p>
+            </div>
+        </div>
+    @endif
+    </div>
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
