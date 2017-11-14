@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <label for="date" class="col-md-4 control-label">Date</label>
                             <div class="col-md-6 ">
-															<div id="calendar"></div>
+															
 														</div>
                         </div>
                         <div class="form-group">
