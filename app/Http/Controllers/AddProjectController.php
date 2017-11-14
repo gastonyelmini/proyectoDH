@@ -15,7 +15,6 @@ class AddProjectController extends Controller
           'author_id' => auth()->user()->id
       ]);
 		
-			
 			$validation = $validator->make($request->all(), [
 					'title' => 'required|min:5',		
 				]);

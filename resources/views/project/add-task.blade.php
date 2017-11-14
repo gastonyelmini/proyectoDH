@@ -33,7 +33,12 @@
                                 @endif
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <label for="date" class="col-md-4 control-label">Date</label>
+                            <div class="col-md-6 ">
+															<div id="calendar"></div>
+														</div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
@@ -47,4 +52,12 @@
         </div>
     </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://npmcdn.com/react@15.3.0/dist/react.min.js"></script>
+<script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
+
+
+<script src="js/date-controller.js"></script>
 @endsection
