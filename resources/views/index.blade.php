@@ -16,8 +16,8 @@
       </a>
       <div class="header-right">
         <div class="faq"><a href="faq.html">Faq</a></div>
-        <div class="logIn"><a href="login.php">Ingresar</a></div>
-        <div class="register"><a href="register.php">Registrarse</a></div>
+        <div class="logIn"><a href="/login">Ingresar</a></div>
+        <div class="register"><a href="/register">Registrarse</a></div>
       </div>
     </header>
     <!-- END OF: header with logo log in and register buttons -->
