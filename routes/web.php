@@ -32,6 +32,10 @@ Route::post('/add-project', [
     'uses' => 'AddProjectController@addProject'
 ])->name('add-project');
 
-Route::get('/add-task', function () {
-	return view('/project/add-task');
-})->name('add-task');
+// Route::get('/add-task', function () {
+// 	return view('/project/add-task');
+// })->name('add-task');
+
+Route::get('/add-task', 'addProjectController@displayTask');
+
+Route::post('/add-task', 'addProjectController@addTask');

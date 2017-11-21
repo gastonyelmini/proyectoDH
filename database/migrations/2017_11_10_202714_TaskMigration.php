@@ -16,8 +16,10 @@ class TaskMigration extends Migration
       Schema::create('tasks', function (Blueprint $table) {
           $table->increments('id');
           $table->string('title');
+          $table->string('from');
+          $table->string('to');
           $table->integer('author_id');
-          $table->string('description');
+          $table->string('description')->nullable();
           $table->timestamps();
       });
     }
