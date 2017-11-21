@@ -72,7 +72,7 @@
 								@if($projects)
 									<select class="selectpicker">
 										@foreach($projects as $project)
-									  	<option class="form-control" value="{{ $project->title }}">{{ $project->title }}</option>
+									  	<option value="{{ $project->title }}">{{ $project->title }}</option>
 										@endforeach
 									</select>
 								@endif
