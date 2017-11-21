@@ -34,10 +34,26 @@
               </div>
           	</div>
             <div class="form-group">
-              <label for="date" class="col-md-4 control-label">Date</label>
+              <label for="from" class="col-md-4 control-label">from</label>
               <div class="col-md-6 ">
-
+								<input type="text" class="form-control" name="from" placeholder="dd/mm/yyyy">
 							</div>
+							@if($errors->has('from'))
+								<span class="help-block">
+									<strong>{{ $errors->first('from') }}</strong>
+								</span>
+							@endif
+            </div>
+						<div class="form-group">
+              <label for="to" class="col-md-4 control-label">to</label>
+              <div class="col-md-6 ">
+								<input type="text" class="form-control" name="to" placeholder="dd/mm/yyyy">
+							</div>
+							@if($errors->has('to'))
+								<span class="help-block">
+									<strong>{{ $errors->first('to') }}</strong>
+								</span>
+							@endif
             </div>
             <div class="form-group">
               <div class="col-md-6 col-md-offset-4">
@@ -53,11 +69,6 @@
   </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<script src="https://npmcdn.com/react@15.3.0/dist/react.min.js"></script>
-<script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment-with-locales.min.js"></script>
-
 
 <script src="js/date-controller.js"></script>
 @endsection
