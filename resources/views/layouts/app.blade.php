@@ -14,6 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="css/date-calendar-style.css">
+    <link rel="stylesheet" href="css/projects.css">
 </head>
 <body>
     <div id="app">
