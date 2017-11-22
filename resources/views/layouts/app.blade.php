@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Boole</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -30,8 +30,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand" href="{{ url('/home') }}">
+                        Boole
                     </a>
                 </div>
 
@@ -57,6 +57,9 @@
                                     <li>
                                         <a href="{{ route('add-project') }}">
                                             Add project
+                                        </a>
+                                        <a href="{{ route('add-task') }}">
+                                            Add task
                                         </a>
                                         <a href="{{ route('edit-user') }}">
                                             Edit
