@@ -15,8 +15,6 @@ Rutas Juan
 */
 Route::post('/edit-user', 'User_edit_controller@updateUserInfo')->name('edit-user');
 Route::get('/edit-user', 'User_edit_controller@displayView')->name('edit-user');
-Route::post('/edit-user', 'User_edit_controller@updateUserInfo')->name('edit-user');
-
 /*
 Rutas relacionadas con proyectos
 Rutas Gaston
@@ -39,6 +37,6 @@ Route::get('/projects', [
 // 	return view('/project/add-task');
 // })->name('add-task');
 
-Route::get('/add-task', 'addProjectController@displayTask')->name('add-task');
+Route::get('/add-task', 'AddProjectController@displayTask')->name('add-task');
 
-Route::post('/add-task', 'addProjectController@addTask')->name('add-task');
+Route::post('/add-task', 'AddProjectController@addTask')->name('add-task');

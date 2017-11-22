@@ -7,6 +7,8 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Image;
+use Auth;
 
 class User_edit_controller extends Controller
 {
@@ -14,32 +16,30 @@ class User_edit_controller extends Controller
             return view('edit-user');
       }
       public function updateUserInfo (Request $request) {
-            
-            // DB::table('users')
-            //       ->where('id', auth()->user()->id)
-            //       ->update([
-            //             'lastName' => $request->lastName,
-            //             'phone' => $request->phone,
-            //             'ocupation' => $request->ocupation,
-            //             'description' => $request->description,
-            //             'adress' => $request->adress,
-            //             'avatar' => $request->avatar,
-            //       ]);
 
             $id = auth()->user()->id;
-            $input = array_filter($request->except(['_token']));
-            
+            $input = array_filter($request->except(['_token', 'avatar']));
+
             User::where('id', $id)->update($input);
             // dd(auth()->user());
             //dd($input);
             $newValues = implode(', ',$input);
+
+            if ($request->hasFile('avatar')) {
+              $avatar = $request->file('avatar');
+              //Nombre para archivo
+              $filename = time() . '.' . $avatar->getClientOriginalExtension();
+              Image::make($avatar)->resize(300, 300)->save(public_path('/images/profile_images/'. $filename));
+              //Guardo nombre de imagen en db
+              $user = Auth::user();
+              $user->avatar = $filename;
+              $user->save();
+              $newValues = $newValues . ', profile image edited';
+            }
+
+
             return redirect()
                    ->route('edit-user')
                    ->with('info', 'Information edited: ' . $newValues);
     }
 }
-
-
-
-
-

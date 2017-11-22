@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="css/date-calendar-style.css">
     <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/profile-header.css">
 </head>
 <body>
     <div id="app">
@@ -43,6 +44,12 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
+                        <!--User Avtar-->
+                        @if(Auth::user())
+                          <div class="user-avatar">
+                            <img src="/images/profile_images/{{Auth::user()->avatar}}" alt="">
+                          </div>
+                        @endif
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('login') }}">Login</a></li>

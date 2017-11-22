@@ -1,4 +1,4 @@
-@extends('layouts.app') 
+@extends('layouts.app')
 
 @section('content')
 
@@ -14,23 +14,26 @@
 	@endif
 </div>
 <div class="row">
+	<div class="info-container">
+		<h1>{{Auth::user()->name}}</h1>
+	</div>
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-default">
 			<div class="panel-heading">Update your information</div>
 
 			<div class="panel-body">
-				<form class="form-horizontal" method="POST" action="/edit-user">
+				<form class="form-horizontal" method="POST" action="/edit-user" enctype="multipart/form-data">
 					{{ csrf_field() }}
 
 					<div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
 						<label for="name" class="col-md-4 control-label">Name</label>
 
 						<div class="col-md-6">
-							<input id="name" type="text" class="form-control" name="name" value="{{ old('name', $user[0]->name) }}" autofocus> 
+							<input id="name" type="text" class="form-control" name="name" value="{{ old('name', $user[0]->name) }}" autofocus>
 							@if ($errors->has('name'))
 								<span class="help-block">
 									<strong>{{ $errors->first('name') }}</strong>
-								</span> 
+								</span>
               @endif
 						</div>
 					</div>
@@ -39,11 +42,11 @@
 						<label for="lastName" class="col-md-4 control-label">Last Name</label>
 
 						<div class="col-md-6">
-							<input id="lastName" type="text" class="form-control" name="lastName" value="{{ old('lastName', $user[0]->lastName) }}" autofocus> 
+							<input id="lastName" type="text" class="form-control" name="lastName" value="{{ old('lastName', $user[0]->lastName) }}" autofocus>
 							@if ($errors->has('lastName'))
 								<span class="help-block">
                 	<strong>{{ $errors->first('lastName') }}</strong>
-                </span> 
+                </span>
               @endif
 						</div>
 					</div>
@@ -52,11 +55,11 @@
 						<label for="phone" class="col-md-4 control-label">Phone</label>
 
 						<div class="col-md-6">
-							<input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone', $user[0]->phone) }}" autofocus> 
+							<input id="phone" type="text" class="form-control" name="phone" value="{{ old('phone', $user[0]->phone) }}" autofocus>
 							@if ($errors->has('phone'))
 								<span class="help-block">
 									<strong>{{ $errors->first('phone') }}</strong>
-								</span> 
+								</span>
               @endif
 						</div>
 					</div>
@@ -65,11 +68,11 @@
 						<label for="ocupation" class="col-md-4 control-label">Ocupation</label>
 
 						<div class="col-md-6">
-							<input id="ocupation" type="text" class="form-control" name="ocupation" value="{{ old('ocupation', $user[0]->ocupation) }}" autofocus> 
+							<input id="ocupation" type="text" class="form-control" name="ocupation" value="{{ old('ocupation', $user[0]->ocupation) }}" autofocus>
 							@if ($errors->has('ocupation'))
 								<span class="help-block">
 									<strong>{{ $errors->first('ocupation') }}</strong>
-								</span> 
+								</span>
               @endif
 						</div>
 					</div>
@@ -78,11 +81,11 @@
 						<label for="description" class="col-md-4 control-label">Description</label>
 
 						<div class="col-md-6">
-							<input id="description" type="text" class="form-control" name="description" value="{{ old('description', $user[0]->description) }}" autofocus> 
+							<input id="description" type="text" class="form-control" name="description" value="{{ old('description', $user[0]->description) }}" autofocus>
 							@if ($errors->has('description'))
 								<span class="help-block">
 									<strong>{{ $errors->first('description') }}</strong>
-								</span> 
+								</span>
               @endif
 						</div>
 					</div>
@@ -91,11 +94,11 @@
 						<label for="adress" class="col-md-4 control-label">Adress</label>
 
 						<div class="col-md-6">
-							<input id="adress" type="text" class="form-control" name="adress" value="{{ old('adress', $user[0]->adress) }}" autofocus> 
+							<input id="adress" type="text" class="form-control" name="adress" value="{{ old('adress', $user[0]->adress) }}" autofocus>
 							@if ($errors->has('adress'))
 								<span class="help-block">
 									<strong>{{ $errors->first('adress') }}</strong>
-								</span> 
+								</span>
               @endif
 						</div>
 					</div>
@@ -104,11 +107,11 @@
 						<label for="avatar" class="col-md-4 control-label">Avatar</label>
 
 						<div class="col-md-6">
-							<input id="avatar" type="text" class="form-control" name="avatar" value="{{ old('avatar') }}" autofocus> 
+							<input id="avatar" type="file" class="form-control" name="avatar" value="{{ old('avatar') }}" autofocus>
 							@if ($errors->has('avatar'))
 								<span class="help-block">
 									<strong>{{ $errors->first('avatar') }}</strong>
-								</span> 
+								</span>
               @endif
 						</div>
 					</div>

@@ -1,0 +1,25 @@
+.info-container {
+  box-sizing: border-box;
+  padding-left: 30px;
+}
+.user-avatar {
+  width: 32px;
+  margin: 0 auto;
+  margin-top: 7px;
+  margin-right: 20px;
+  float: right;
+}
+.user-avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+@media(min-width: 992px) {
+  .user-avatar {
+    width: 32px;
+    margin-top: 7px;
+  }
+  .info-container {
+    box-sizing: border-box;
+    padding-left: 250px;
+  }
+}
