@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class ProjectController extends Controller
 {
     protected function showForm() {
-      $projects = DB::table('projects')->get();
+      $projects = DB::table('projects')->where("author_id", auth()->user()->id)->get();
       return view('project.projects', ['projects' => $projects]);
     }
 }
