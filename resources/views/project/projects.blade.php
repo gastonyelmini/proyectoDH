@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('content')
@@ -7,6 +8,15 @@
             <div class="panel panel-default">
                 <div class="panel-heading">My Projects</div>
                 <div class="panel-body">
+                  @if(!$projects->count())
+                    <div class="row">
+                      <div class="col-md-12">
+                        <p class="alert alert-info">
+                          Cree su nuevo <a href="/add-project">Proyecto</a>
+                        </p>
+                      </div>
+                    </div>
+                  @endif
                   @foreach ($projects as $project)
                       <div class="project">
                         <div class="project-title">
@@ -15,7 +25,8 @@
 
                         </div>
                         <div class="project-selector">
-                          <button type="button" name="button">Ver proyecto</button>
+                          <a id="{{ $project->id }}" class="btn btn-info" href="/add-task?id={{ $project->id }}" type="button" name="button">Ver</a>
+                          <a id="{{ $project->id }}" class="btn btn-info" href="/add-task?id={{ $project->id }}" type="button" name="button">Tasks</a>
                         </div>
                       </div>
                   @endforeach

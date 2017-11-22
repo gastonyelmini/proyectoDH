@@ -63,17 +63,25 @@
 								</span>
 							@endif
             </div>
-
-
-
 						<div class="form-group">
               <label for="project" class="col-md-4 control-label"></label>
               <div class="col-md-6">
 								@if($projects)
-									<select class="selectpicker">
-										@foreach($projects as $project)
-									  	<option value="{{ $project->title }}">{{ $project->title }}</option>
-										@endforeach
+									<select id="dropdown" class="selectpicker">
+										@if(!empty($_GET))
+											@foreach($projects as $project)
+												@if($_GET["id"] == $project->id)
+										  		<option selected id="{{ $project->id }} " value="{{ $project->title }}">{{ $project->title }}</option>
+												@else
+													<option id="{{ $project->id }}" value="{{ $project->title }}">{{ $project->title }}</option>
+												@endif
+
+											@endforeach
+										@else
+											@foreach($projects as $project)
+												<option id="{{ $project->id }}" value="{{ $project->title }}">{{ $project->title }}</option>
+											@endforeach
+										@endif
 									</select>
 								@endif
 							</div>
@@ -96,4 +104,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <script src="js/date-controller.js"></script>
+
+<script>
+	var id = $('#dropdown option').filter(':selected').text();
+	console.log(id);
+</script>
 @endsection
