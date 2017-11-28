@@ -47,7 +47,9 @@
                         <!--User Avtar-->
                         @if(Auth::user())
                           <div class="user-avatar">
-                            <img src="/images/profile_images/{{Auth::user()->avatar}}" alt="">
+                            <a href="{{ route('edit-user') }}">
+                              <img src="/images/profile_images/{{Auth::user()->avatar}}" alt="">
+                            </a>
                           </div>
                         @endif
                         <!-- Authentication Links -->

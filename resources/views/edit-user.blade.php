@@ -20,6 +20,10 @@
 	<div class="info-container">
 		<h1>{{Auth::user()->name}}</h1>
 	</div>
+	<div class="user-description">
+		<p><strong>{{Auth::user()->ocupation}}</strong></p>
+		<p>{{Auth::user()->description}}</p>
+	</div>
 	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-default">
 			<div class="panel-heading">Update your information</div>

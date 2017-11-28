@@ -1,6 +1,12 @@
 .info-container {
   text-align: center;
-  padding-bottom: 10px;
+}
+.user-description {
+  text-align: center;
+  padding: 0 50px 20px 50px;
+}
+.user-description p:first-child {
+  font-size: 17px;
 }
 .user-avatar {
   width: 32px;
@@ -16,6 +22,7 @@
 .avatar-container {
   width: 45%;
   margin: 0 auto;
+  padding-top: 20px;
 }
 .avatar-container img {
   width: 100%;
@@ -25,9 +32,17 @@
   .avatar-container {
     width: 20%;
   }
+  .user-description {
+    text-align: center;
+    padding: 0 150px 20px 150px;
+  }
 }
 @media(min-width: 992px) {
   .avatar-container {
     width: 15%;
+  }
+  .user-description {
+    text-align: center;
+    padding: 0 350px 20px 350px;
   }
 }
