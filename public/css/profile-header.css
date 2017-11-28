@@ -1,6 +1,6 @@
 .info-container {
-  box-sizing: border-box;
-  padding-left: 30px;
+  text-align: center;
+  padding-bottom: 10px;
 }
 .user-avatar {
   width: 32px;
@@ -13,13 +13,21 @@
   width: 100%;
   border-radius: 50%;
 }
-@media(min-width: 992px) {
-  .user-avatar {
-    width: 32px;
-    margin-top: 7px;
+.avatar-container {
+  width: 45%;
+  margin: 0 auto;
+}
+.avatar-container img {
+  width: 100%;
+  border-radius: 50%;
+}
+@media(min-width: 768px) {
+  .avatar-container {
+    width: 20%;
   }
-  .info-container {
-    box-sizing: border-box;
-    padding-left: 250px;
+}
+@media(min-width: 992px) {
+  .avatar-container {
+    width: 15%;
   }
 }

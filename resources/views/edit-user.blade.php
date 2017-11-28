@@ -14,6 +14,9 @@
 	@endif
 </div>
 <div class="row">
+	<div class="avatar-container">
+		<img src="/images/profile_images/{{Auth::user()->avatar}}" alt="">
+	</div>
 	<div class="info-container">
 		<h1>{{Auth::user()->name}}</h1>
 	</div>
