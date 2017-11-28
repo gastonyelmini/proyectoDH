@@ -29,7 +29,7 @@ class User_edit_controller extends Controller
               $avatar = $request->file('avatar');
               //Nombre para archivo
               $filename = time() . '.' . $avatar->getClientOriginalExtension();
-              Image::make($avatar)->resize(300, 300)->save(public_path('/images/profile_images/'. $filename));
+              Image::make($avatar)->fit(200)->save(public_path('/images/profile_images/'. $filename));
               //Guardo nombre de imagen en db
               $user = Auth::user();
               $user->avatar = $filename;
