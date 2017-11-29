@@ -22,8 +22,13 @@ var app = new Vue({
         }
     },
 
+  },
 
-
+  watch: {
+    email: function () {
+      // make your ajax request or whatever you want to be delayed here
+      this.emailPass();
+    }
   },
 
   methods: {
@@ -50,14 +55,10 @@ var app = new Vue({
           return false;
         } else {
           app.emailPassed = true;
-          return true;
         }
       }
     },
 
-    onSubmit: function(){
-      alert('Hola')
-    },
 
   }
 })
