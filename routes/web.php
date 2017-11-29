@@ -25,10 +25,12 @@ Route::get('/add-project', [
     'middleware' => 'auth',
     'uses' => 'AddProjectController@showForm'
 ])->name('add-project');
+
 Route::post('/add-project', [
     'middleware' => 'auth',
     'uses' => 'AddProjectController@addProject'
 ])->name('add-project');
+
 Route::get('/projects', [
     'middleware' => 'auth',
     'uses' => 'ProjectController@showForm'
@@ -40,3 +42,6 @@ Route::get('/projects', [
 Route::get('/add-task', 'AddProjectController@displayTask')->name('add-task');
 
 Route::post('/add-task', 'AddProjectController@addTask')->name('add-task');
+
+
+Route::get('/checkEmail', 'Auth\RegisterController@checkEmail');

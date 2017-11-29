@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/profile-header.css">
 </head>
 <body>
-    <div id="app">
+    <div id="root">
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
@@ -67,9 +67,7 @@
                                         <a href="{{ route('add-project') }}">
                                             Add project
                                         </a>
-                                        <a href="{{ route('add-task') }}">
-                                            Add task
-                                        </a>
+
                                         <a href="{{ route('edit-user') }}">
                                             Edit
                                         </a>
@@ -94,9 +92,15 @@
         </nav>
 
         @yield('content')
+
     </div>
 
     <!-- Scripts -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="/js/registerController.js"></script>
 </body>
 </html>

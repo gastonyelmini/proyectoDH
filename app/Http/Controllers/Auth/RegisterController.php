@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -74,5 +75,11 @@ class RegisterController extends Controller
             // 'avatar' => $data['avatar'],
 
         ]);
+    }
+
+    protected function checkEmail()
+    {
+      $response = \App\User::all()->pluck('email');
+      return response()->json($response);
     }
 }

@@ -101,12 +101,11 @@
     </div>
   </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<script src="js/date-controller.js"></script>
 
 <script>
-	var id = $('#dropdown option').filter(':selected').text();
-	console.log(id);
+	window.onload = function () {
+		var id = $('#dropdown option').filter(':selected').text();
+		console.log(id);
+	}
 </script>
 @endsection
