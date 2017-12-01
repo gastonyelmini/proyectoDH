@@ -131,6 +131,7 @@
     <link href="css/style.css" rel="stylesheet">
     <!-- color CSS -->
     <link href="css/colors/default.css" id="theme" rel="stylesheet">
+    <link rel="stylesheet" href="../plugins/bower_components/dropify/dist/css/dropify.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -317,18 +318,18 @@
     <!--Wave Effects -->
     <script src="js/waves.js"></script>
     <!--Counter js -->
-    <script src="../plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
-    <script src="../plugins/bower_components/counterup/jquery.counterup.min.js"></script>
+    <script src="plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
+    <script src="plugins/bower_components/counterup/jquery.counterup.min.js"></script>
     <!--Morris JavaScript -->
-    <script src="../plugins/bower_components/raphael/raphael-min.js"></script>
-    <script src="../plugins/bower_components/morrisjs/morris.js"></script>
+    <script src="plugins/bower_components/raphael/raphael-min.js"></script>
+    <script src="plugins/bower_components/morrisjs/morris.js"></script>
     <!-- Custom Theme JavaScript -->
     <script src="js/custom.min.js"></script>
     <script src="js/dashboard1.js"></script>
     <!-- Sparkline chart JavaScript -->
-    <script src="../plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
-    <script src="../plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js"></script>
-    <script src="../plugins/bower_components/toast-master/js/jquery.toast.js"></script>
+    <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
+    <script src="plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js"></script>
+    <script src="plugins/bower_components/toast-master/js/jquery.toast.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $.toast({
@@ -342,10 +343,49 @@
             })
         });
     </script>
+    <!-- jQuery file upload -->
+    <script src="plugins/bower_components/dropify/dist/js/dropify.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Basic
+            $('.dropify').dropify();
+            // Translated
+            $('.dropify-fr').dropify({
+                messages: {
+                    default: 'Glissez-déposez un fichier ici ou cliquez'
+                    , replace: 'Glissez-déposez un fichier ou cliquez pour remplacer'
+                    , remove: 'Supprimer'
+                    , error: 'Désolé, le fichier trop volumineux'
+                }
+            });
+            // Used events
+            var drEvent = $('#input-file-events').dropify();
+            drEvent.on('dropify.beforeClear', function (event, element) {
+                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+            });
+            drEvent.on('dropify.afterClear', function (event, element) {
+                alert('File deleted');
+            });
+            drEvent.on('dropify.errors', function (event, element) {
+                console.log('Has Errors');
+            });
+            var drDestroy = $('#input-file-to-destroy').dropify();
+            drDestroy = drDestroy.data('dropify')
+            $('#toggleDropify').on('click', function (e) {
+                e.preventDefault();
+                if (drDestroy.isDropified()) {
+                    drDestroy.destroy();
+                }
+                else {
+                    drDestroy.init();
+                }
+            })
+        });
+    </script>
     <!--Style Switcher -->
-    <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <!--Style Switcher -->
-    <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
 </body>
 
 </html>

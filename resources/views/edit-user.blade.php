@@ -140,7 +140,7 @@
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">My Profile</h4> </div>
-    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
+    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
         <?php //echo breadcrumbs(); ?>
     </div>
     <!-- /.col-lg-12 -->
@@ -246,16 +246,13 @@
 											</div>
 											<div class="form-group{{ $errors->has('avatar') ? ' has-error' : '' }}">
 													<label for="exampleInputEmail1">Avatar</label>
-													<div class="input-group">
-															<div class="input-group-addon"><i class="ti-user"></i></div>
-															<input id="avatar" type="file" class="form-control" name="avatar" value="{{ old('avatar') }}" autofocus></div>
+                          <input id="avatar" type="file" class="dropify" name="avatar" value="{{ old('avatar') }}" autofocus>
 															@if ($errors->has('avatar'))
 																<span class="help-block">
 								                	<strong>{{ $errors->first('avatar') }}</strong>
 								                </span>
 								              @endif
 											</div>
-
 
 											<button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Update</button>
 									</form>
