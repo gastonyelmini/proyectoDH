@@ -17,21 +17,22 @@
         <div class="white-box">
             <h3 class="box-title m-b-0">Add project</h3>
             <p class="text-muted m-b-30 font-13"> Create a new project and start adding tasks!</p>
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label class="col-md-12">Name</label>
+            <form class="form-horizontal" method="POST" action="/add-project">
+                {{ csrf_field() }}
+                <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
+                    <label for="title" class="col-md-12">Name</label>
                     <div class="col-md-12">
-                        <input type="text" class="form-control">
+                        <input id="title" class="form-control" name="title" placeholder="Plase, insert a project name..." value="{{ old('title') }}" required type="text">
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="col-md-12">Description</label>
                     <div class="col-md-12">
-                        <textarea class="form-control" rows="5"></textarea>
+                        <textarea id="description" name="description" placeholder="Insert a description of your project..." class="form-control" rows="5"></textarea>
                     </div>
                 </div>
-
+                <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Add project</button>
             </form>
         </div>
     </div>

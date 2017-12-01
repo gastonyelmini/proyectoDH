@@ -14,6 +14,7 @@ class AddProjectController extends Controller
 
       Project::create([
           'title' => $request['title'],
+          'description' => $request['description'],
           'author_id' => auth()->user()->id
       ]);
 

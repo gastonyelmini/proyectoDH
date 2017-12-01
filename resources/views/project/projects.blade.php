@@ -78,7 +78,12 @@
                     <div class="user-img"> <img src="/images/profile_images/{{Auth::user()->avatar}}" alt="user" class="img-circle"></div>
                     <div class="mail-contnet">
                         <h5>{{$project->title}} </h5>
-                        <span class="mail-desc">Donec ac condimentum massa. Etiam pellentesque pretium lacus. Phasellus ultricies dictum suscipit. Aenean commodo dui pellentesque molestie feugiat.</span>
+                        <span class="mail-desc">
+                          
+                          @if ($project->description)
+                          {{ $project->description }}
+                          @endif
+                        </span>
                         <a id="{{ $project->id }}" href="#">
                           <span class="label label-rounded label-info">View project</span>
                         </a>

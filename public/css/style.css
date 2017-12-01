@@ -3147,6 +3147,7 @@ ul.common li a:hover {
 .comment-center .comment-body {
     border-bottom: 1px solid rgba(120, 130, 140, .13);
     display: table;
+    width: 100%;
     padding: 20px 25px
 }
 
