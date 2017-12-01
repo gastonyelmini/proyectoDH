@@ -25,7 +25,7 @@
                         <input id="title" class="form-control" name="title" placeholder="Plase, insert a project name..." value="{{ old('title') }}" required type="text">
                     </div>
                 </div>
-
+                
                 <div class="form-group">
                     <label class="col-md-12">Description</label>
                     <div class="col-md-12">

@@ -305,6 +305,11 @@
     <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
+    
+    <!-- Axios Vue -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+
     <!-- jQuery -->
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap Core JavaScript -->
@@ -386,6 +391,7 @@
     <script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <!--Style Switcher -->
     <script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+    <script src="js/deleteProjectController.js"></script>
 </body>
 
 </html>
