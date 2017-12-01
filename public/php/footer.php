@@ -1,1 +1,1 @@
-<footer class="footer text-center"> 2017 &copy; Boole - Todos Los Derechos Reservados. </footer>
+<footer class="footer text-center"> <?php echo date('Y'); ?> &copy; Boole - All Rights Reseved. </footer>
