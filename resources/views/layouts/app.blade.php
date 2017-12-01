@@ -10,12 +10,14 @@
 
     <title>Boole</title>
 
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link rel="stylesheet" href="css/date-calendar-style.css">
     <link rel="stylesheet" href="css/projects.css">
     <link rel="stylesheet" href="css/profile-header.css">
+    <link href="https://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet">
 </head>
 <body>
     <div id="root">
@@ -114,7 +116,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
     <title>Boole - The best way to organize your projects</title>
     <!-- Bootstrap Core CSS -->
     <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -148,7 +150,8 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-                <div class="top-left-part"> <a class="logo" href="{{ route('home') }}"><b><!--This is dark logo icon--><img src="../plugins/images/eliteadmin-logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="../plugins/images/eliteadmin-logo-dark.png" alt="home" class="light-logo" /></b><span class="hidden-xs"><!--This is dark logo text--><img src="../plugins/images/eliteadmin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><img src="../plugins/images/eliteadmin-text-dark.png" alt="home" class="light-logo" /></span></a></div>
+                <div class="top-left-part"> <a class="logo" href="{{ route('home') }}"><b><!--This is dark logo icon--><img src="/logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="/logo.png" alt="home" class="light-logo" style="width: 40px;"/></b><span class="hidden-xs"><!--This is dark logo text-->
+                  <img src="../plugins/images/eliteadmin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><p class="light-logo" style="color: #18699f; font-size: 20px; font-family: 'Syncopate', sans-serif;">BOOLE</p></span></a></div>
                 <ul class="nav navbar-top-links navbar-left hidden-xs">
                     <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
                     <li>
@@ -305,7 +308,7 @@
     <!-- /#page-wrapper -->
     </div>
     <!-- /#wrapper -->
-    
+
     <!-- Axios Vue -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue"></script>

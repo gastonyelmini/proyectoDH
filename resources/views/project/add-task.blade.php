@@ -1,6 +1,17 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row bg-title">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">Add tasks</h4> </div>
+    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+			<!-- <a href="/add-task'../../../../eliteadmin-inverse-php/form-basic.php'
+" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Add tasks</a> -->
+        <?php //echo breadcrumbs(); ?>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!--
 <div class="row">
 @if(session()->get('title'))
 	<div class="col-md-12">
@@ -100,7 +111,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <script>
 	window.onload = function () {
