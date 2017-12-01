@@ -1,7 +1,44 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="row bg-title">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+        <h4 class="page-title">Add projects</h4> </div>
+    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="/add-task'../../../../eliteadmin-inverse-php/form-basic.php'
+" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Add tasks</a>
+        <?php //echo breadcrumbs(); ?>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+
+<!-- .row -->
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            <h3 class="box-title m-b-0">Add project</h3>
+            <p class="text-muted m-b-30 font-13"> Create a new project and start adding tasks!</p>
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-md-12">Name</label>
+                    <div class="col-md-12">
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-12">Description</label>
+                    <div class="col-md-12">
+                        <textarea class="form-control" rows="5"></textarea>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<!-- /.row -->
+<!-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
@@ -37,5 +74,15 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+
+
+
+
+
+
+
+
+
 @endsection

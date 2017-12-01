@@ -27,7 +27,7 @@
       <h1>Boole es la manera gratuita y visual de organizar su proyecto.</h1>
       <p>Deje a un lado las hojas de cálculo sin actualizar, las notas rápidas y el software inadecuado para gestionar sus proyectos. Boole le deja ver todo sobre su proyecto de un solo vistazo.</p>
 
-      <a class="green-register" href="register.php">Regístrese. ¡Es gratis!</a>
+      <a class="green-register" href="/register">Regístrese. ¡Es gratis!</a>
 
     </div>
     <!--END OF: landing's top -->
@@ -141,7 +141,7 @@
         <p class="project"><strong>Descarte las notas rápidas, hojas de cálculo, correo
 electrónico y el software inadecuado</strong> para gestionar sus proyectos y pase a ser una de las personas que usan Boole. Puede añadir tantos tableros y tantas personas como desee con su cuenta gratuita.</p>
       </div>
-      <a class="green-register project" href="register.php">Regístrese. ¡Es gratis!</a>
+      <a class="green-register project" href="/register">Regístrese. ¡Es gratis!</a>
     </footer>
     <!-- END OF: Footer -->
 
