@@ -34,7 +34,7 @@ Route::post('/add-project', [
 Route::get('/projects', [
     'middleware' => 'auth',
     'uses' => 'ProjectController@showForm'
-])->name('project');
+])->name('projects');
 // Route::get('/add-task', function () {
 // 	return view('/project/add-task');
 // })->name('add-task');
