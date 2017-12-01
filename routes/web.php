@@ -35,6 +35,11 @@ Route::get('/projects', [
     'middleware' => 'auth',
     'uses' => 'ProjectController@showForm'
 ])->name('projects');
+
+Route::get('/chat', [
+    'middleware' => 'auth',
+    'uses' => 'ChatController@showChat'
+])->name('projects');
 // Route::get('/add-task', function () {
 // 	return view('/project/add-task');
 // })->name('add-task');

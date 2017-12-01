@@ -165,7 +165,7 @@
         </div>
         <div class="form-group text-center m-t-20">
           <div class="col-xs-12">
-            <button :disabled="!pass" type="submit" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light">
+            <button :disabled="!pass" type="submit" class="btn btn-info btn-lg btn-block text-uppercase waves-effect waves-light" id="submitBtn">
                 Register
             </button>
           </div>
@@ -203,5 +203,13 @@
 
 <script src="{{ asset('js/app.js') }}"></script>
 <script src="/js/registerController.js"></script>
+
+<!-- scripts de Gaston -->
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script>
+<script src="js/firebase-auth.js"></script>
 </body>
 </html>

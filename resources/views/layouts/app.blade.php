@@ -395,6 +395,14 @@
     <!--Style Switcher -->
     <script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
     <script src="js/deleteProjectController.js"></script>
+
+    <!-- scripts de Gaston -->
+    <script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script>
+    <script src="js/firebase-auth.js"></script>
 </body>
 
 </html>
