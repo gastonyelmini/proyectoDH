@@ -39,7 +39,7 @@ Route::get('/projects', [
 Route::get('/chat', [
     'middleware' => 'auth',
     'uses' => 'ChatController@showChat'
-])->name('projects');
+])->name('chat');
 // Route::get('/add-task', function () {
 // 	return view('/project/add-task');
 // })->name('add-task');
