@@ -21,6 +21,7 @@ class AddProjectController extends Controller
 
 			$validation = $validator->make($request->all(), [
 					'title' => 'required|min:5',
+          'description' => 'required|min:5',
 				]);
 				if ($validation->fails()){
 					return redirect('/add-task')->withErrors($validation);

@@ -28,10 +28,10 @@
                 <div class="form-group">
                     <label class="col-md-12">Description</label>
                     <div class="col-md-12">
-                        <textarea id="description" name="description" placeholder="Insert a description of your project..." class="form-control" rows="5"></textarea>
+                        <textarea id="description" name="description" placeholder="Insert a description of your project..." class="form-control" rows="5" required></textarea>
                     </div>
                 </div>
-                
+
                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Add project</button>
             </form>
         </div>
