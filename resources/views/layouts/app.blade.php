@@ -285,8 +285,8 @@
                     </li>
                     <li> <a href="{{ route('projects') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Projects</span></a> </li>
                     <li> <a href="{{ route('add-project') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Add project</span></a> </li>
-                    <li> <a href="{{ route('add-task') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Add tasks</span></a> </li>
-                    <li>
+                    <!-- <li> <a href="{{ route('add-task') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Add tasks</span></a> </li>
+                    <li> -->
                       <a href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                                    document.getElementById('logout-form').submit();" class="waves-effect"><i data-icon="P" class="icon-logout fa-fw"></i> <span class="hide-menu">Logout</span></a>

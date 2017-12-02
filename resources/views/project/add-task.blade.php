@@ -1,10 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-{{ $projects }}
+<!-- {{ $projects }} -->
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-        <h4 class="page-title">Add tasks</h4> </div>
+        <h4 class="page-title">Add tasks
+          @if($projects)
+           to {{ $projects[0]->title }}
+          @endif
+        </h4> </div>
     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 			<!-- <a href="/add-task'../../../../eliteadmin-inverse-php/form-basic.php'
 " class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Add tasks</a> -->

@@ -2,6 +2,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 {{-- <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -54,6 +55,7 @@
     </div>
 </div> --}}
 
+
 <div id="projectsRoot">
   <div class="row bg-title">
       <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -64,6 +66,16 @@
       <!-- /.col-lg-12 -->
   </div>
   <!--row -->
+  @if(session()->get('title'))
+  <div class="row">
+  	<div class="col-md-12">
+  		<p class="alert alert-info">
+  			{{ "El proyecto " . session()->get('title') . " ha sido creado exitosamente." }}
+  		</p>
+  	</div>
+  </div>
+  @endif
+
   <div class="row">
       <div class="col-md-12">
           <div class="white-box">

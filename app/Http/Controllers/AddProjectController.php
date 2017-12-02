@@ -26,7 +26,7 @@ class AddProjectController extends Controller
 					return redirect('/add-task')->withErrors($validation);
 				}
 
-			return redirect('/add-task')->with('title', $request['title']);
+			return redirect('/projects')->with('title', $request['title']);
       // DB::table('projects')->where('id', auth()->user()->id)->update(['title'=>'Hola']);
     }
 
@@ -37,7 +37,13 @@ class AddProjectController extends Controller
 
 
     public function displayTask() {
-      $projects = DB::table('projects')->where('author_id',auth()->user()->id)->get();
+      // $projects = DB::table('projects')->where('author_id',auth()->user()->id)->get();
+      if(!empty($_GET)) {
+        $projects = DB::table('projects')->where('id',$_GET['id'])->get();
+      } else {
+        $projects = '';
+      }
+
       return view('/project/add-task', [
         'projects' => $projects,
       ]);
