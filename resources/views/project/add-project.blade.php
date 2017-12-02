@@ -4,8 +4,7 @@
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Add projects</h4> </div>
-    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="/add-task'../../../../eliteadmin-inverse-php/form-basic.php'
-" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Add tasks</a>
+    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="/add-task" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Add tasks</a>
         <?php //echo breadcrumbs(); ?>
     </div>
     <!-- /.col-lg-12 -->
@@ -25,13 +24,14 @@
                         <input id="title" class="form-control" name="title" placeholder="Plase, insert a project name..." value="{{ old('title') }}" required type="text">
                     </div>
                 </div>
-                
+
                 <div class="form-group">
                     <label class="col-md-12">Description</label>
                     <div class="col-md-12">
                         <textarea id="description" name="description" placeholder="Insert a description of your project..." class="form-control" rows="5"></textarea>
                     </div>
                 </div>
+                
                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Add project</button>
             </form>
         </div>

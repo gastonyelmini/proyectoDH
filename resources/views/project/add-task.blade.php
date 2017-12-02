@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Add tasks</h4> </div>
@@ -11,6 +12,81 @@
     </div>
     <!-- /.col-lg-12 -->
 </div>
+
+@if(session()->get('title'))
+	<div class="col-md-12">
+		<p class="alert alert-info">
+			{{ "El proyecto " . session()->get('title') . " ha sido creado exitosamente." }}
+		</p>
+	</div>
+</div>
+@endif
+@if(session()->get('taskCreated'))
+	<div class="col-md-12">
+		<p class="alert alert-info">
+			{{ session()->get('taskCreated') }}
+		</p>
+	</div>
+</div>
+@endif
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-box">
+            <h3 class="box-title m-b-0">Add task</h3>
+            <p class="text-muted m-b-30 font-13"> Add a class to your project </p>
+            <form class="form" method="POST" action="/add-task">
+                {{ csrf_field() }}
+                <div class="form-group row">
+                  <label for="example-text-input" class="col-2 col-form-label">Title</label>
+                  <div class="col-10">
+                      <input class="form-control" name="title" type="text" placeholder="Plase, insert a task name" id="example-text-input title" value="{{ old('title') }}">
+                      @if($errors->has('title'))
+      								  <span class="help-block">
+      								    <strong>{{ $errors->first('title') }}</strong>
+      								  </span>
+      								@endif
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="example-date-input" class="col-2 col-form-label">From</label>
+                    <div class="col-10">
+                        <input class="form-control" name="from" type="date" id="example-date-input">
+                        @if($errors->has('from'))
+          								<span class="help-block">
+          									<strong>{{ $errors->first('from') }}</strong>
+          								</span>
+          							@endif
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="example-date-input" class="col-2 col-form-label">To</label>
+                    <div class="col-10">
+                        <input class="form-control" name="to" type="date" id="example-date-input">
+                        @if($errors->has('to'))
+          								<span class="help-block">
+          									<strong>{{ $errors->first('to') }}</strong>
+          								</span>
+          							@endif
+                    </div>
+                </div>
+
+                <!-- <div class="form-group row">
+                    <label for="example-color-input" class="col-2 col-form-label">Color</label>
+                    <div class="col-10">
+                        <input class="form-control" type="color" value="#563d7c" id="example-color-input">
+                    </div>
+                </div> -->
+
+                <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
 <!--
 <div class="row">
 @if(session()->get('title'))
