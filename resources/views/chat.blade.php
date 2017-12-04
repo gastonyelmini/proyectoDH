@@ -155,30 +155,14 @@
             <div class="form-material">
                 <input class="form-control p-20" type="text" placeholder="Search Contact"> </div>
             <ul class="chatonline style-none ">
-                <li>
-                    <a href="javascript:void(0)"><img src="../plugins/images/users/varun.jpg" alt="user-img" class="img-circle"> <span>Varun Dhavan <small class="text-success">online</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)" class="active"><img src="../plugins/images/users/genu.jpg" alt="user-img" class="img-circle"> <span>Genelia Deshmukh <small class="text-warning">Away</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../plugins/images/users/ritesh.jpg" alt="user-img" class="img-circle"> <span>Ritesh Deshmukh <small class="text-danger">Busy</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../plugins/images/users/arijit.jpg" alt="user-img" class="img-circle"> <span>Arijit Sinh <small class="text-muted">Offline</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../plugins/images/users/govinda.jpg" alt="user-img" class="img-circle"> <span>Govinda Star <small class="text-success">online</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../plugins/images/users/hritik.jpg" alt="user-img" class="img-circle"> <span>John Abraham<small class="text-success">online</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../plugins/images/users/john.jpg" alt="user-img" class="img-circle"> <span>Hritik Roshan<small class="text-success">online</small></span></a>
-                </li>
-                <li>
-                    <a href="javascript:void(0)"><img src="../plugins/images/users/pawandeep.jpg" alt="user-img" class="img-circle"> <span>Pwandeep rajan <small class="text-success">online</small></span></a>
-                </li>
+              <li v-for="user in usersInRoom" :user="user">
+                  <a href="javascript:void(0)">
+                    <img alt="" :src="'/images/profile_images/'+user.avatar" class="img-circle">
+                    <span>@{{user.name}}
+                      <small class="text-success">online</small>
+                    </span>
+                  </a>
+              </li>
                 <li class="p-20"></li>
             </ul>
         </div>
