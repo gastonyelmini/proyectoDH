@@ -271,7 +271,14 @@
               <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                   <div class="user-profile">
                       <div class="dropdown user-pro-body">
-                          <div><img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle"></div> <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}<span class="caret"></span></a>
+                          <div>
+                            <a href="{{ route('edit-user') }}">
+                              <img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle">
+                            </a>
+                          </div>
+                          <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}
+                            <span class="caret"></span>
+                          </a>
                           <ul class="dropdown-menu animated flipInY">
                               <li><a href="{{ route('edit-user') }}"><i class="ti-user"></i> My Profile</a></li>
                           </ul>
@@ -286,8 +293,9 @@
                       </span> </div>
                           <!-- /input-group -->
                       </li>
-                      <li> <a href="{{ route('projects') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Projects</span></a> </li>
+                      <li> <a href="{{ route('projects') }}" class="waves-effect"><i data-icon="n" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Projects</span></a> </li>
                       <li> <a href="{{ route('add-project') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Add project</span></a> </li>
+                      <li> <a href="{{ route('chat') }}" class="waves-effect"><i data-icon="-" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Chat</span></a> </li>
 
                       <li>
                         <a href="{{ route('logout') }}"

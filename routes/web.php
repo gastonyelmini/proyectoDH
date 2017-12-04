@@ -36,6 +36,11 @@ Route::get('/projects', [
     'uses' => 'ProjectController@showForm'
 ])->name('projects');
 
+Route::get('/add-friend', [
+    'middleware' => 'auth',
+    'uses' => 'AddFriendController@showUsers'
+])->name('chat');
+
 Route::get('/chat', [
     'middleware' => 'auth',
     'uses' => 'ChatController@showChat'
