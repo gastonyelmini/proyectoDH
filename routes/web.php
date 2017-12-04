@@ -1,5 +1,5 @@
 <?php
-
+use App\Events\MessagePosted;
 
 Route::get('/', function () {
     return view('index');
@@ -40,6 +40,24 @@ Route::get('/chat', [
     'middleware' => 'auth',
     'uses' => 'ChatController@showChat'
 ])->name('chat');
+
+Route::get('messages', function() {
+  return App\Message::with('user')->get();
+})->middleware('auth');
+
+Route::post('messages', function() {
+  $user = Auth::user();
+
+  $message = $user->messages()->create([
+    'message' => request()->get('message')
+  ]);
+
+  //Anunciar que se envio un nuevo mensaje
+  broadcast(new MessagePosted($message, $user))->toOthers();
+
+  return ['status' => 'OK'];
+})->middleware('auth');
+
 // Route::get('/add-task', function () {
 // 	return view('/project/add-task');
 // })->name('add-task');

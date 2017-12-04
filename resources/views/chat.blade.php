@@ -192,45 +192,11 @@
         </div>
         <div class="chat-box">
             <ul class="chat-list slimscroll p-t-30">
-                <li>
-                    <div class="chat-image"> <img alt="male" src="../plugins/images/users/ritesh.jpg"> </div>
-                    <div class="chat-body">
-                        <div class="chat-text">
-                            <h4>Ritesh</h4>
-                            <p> Hi, Genelia how are you and my son? </p> <b>10.00 am</b> </div>
-                    </div>
-                </li>
-                <li class="odd">
-                    <div class="chat-image"> <img alt="Female" src="../plugins/images/users/genu.jpg"> </div>
-                    <div class="chat-body">
-                        <div class="chat-text">
-                            <h4>Genelia</h4>
-                            <p> Hi, How are you Ritesh!!! We both are fine sweetu. </p> <b>10.03 am</b> </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="chat-image"> <img alt="male" src="../plugins/images/users/ritesh.jpg"> </div>
-                    <div class="chat-body">
-                        <div class="chat-text">
-                            <h4>Ritesh</h4>
-                            <p> Oh great!!! just enjoy you all day and keep rocking</p> <b>10.05 am</b> </div>
-                    </div>
-                </li>
-                <li class="odd">
-                    <div class="chat-image"> <img alt="Female" src="../plugins/images/users/genu.jpg"> </div>
-                    <div class="chat-body">
-                        <div class="chat-text">
-                            <h4>Genelia</h4>
-                            <p> Your movei was superb and your acting is mindblowing </p> <b>10.07 am</b> </div>
-                    </div>
-                </li>
+                <chat-log :messages="messages"></chat-log>
             </ul>
             <div class="row send-chat-box">
                 <div class="col-sm-12">
-                    <textarea class="form-control" placeholder="Type your message"></textarea>
-                    <div class="custom-send"><a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="Insert Emojis"><i class="ti-face-smile"></i></a> <a href="javacript:void(0)" class="cst-icon" data-toggle="tooltip" title="File Attachment"><i class="fa fa-paperclip"></i></a>
-                        <button class="btn btn-danger btn-rounded" type="button">Send</button>
-                    </div>
+                    <chat-composer v-on:messagesent="addMessage"></chat-composer>
                 </div>
             </div>
         </div>
@@ -238,5 +204,7 @@
     <!-- .chat-right-panel -->
 </div>
 <!-- /.chat-row -->
+
+
 
 @endsection
