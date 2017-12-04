@@ -1136,7 +1136,6 @@ var app = new Vue({
         message: e.message.message,
         user: e.user
       });
-      console.log(e);
     });
   }
 });
@@ -48598,10 +48597,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
   methods: {
     sendMessage: function sendMessage() {
+      var fullPath = document.getElementById("user-avatar").src;
+      var filename = fullPath.replace(/^.*[\\\/]/, '');
       this.$emit('messagesent', {
         message: this.messageText,
         user: {
-          name: "Gaston Yelmini"
+          name: $('#wrapper > div.navbar-default.sidebar > div > div > div > a').text(),
+          avatar: filename
         }
       });
       this.messageText = '';

@@ -22,10 +22,13 @@
       },
       methods: {
         sendMessage() {
+          var fullPath = document.getElementById("user-avatar").src;
+          var filename = fullPath.replace(/^.*[\\\/]/, '');
           this.$emit('messagesent', {
             message: this.messageText,
             user: {
-              name: "Gaston Yelmini"
+              name: $('#wrapper > div.navbar-default.sidebar > div > div > div > a').text(),
+              avatar: filename
             }
           });
           this.messageText = '';
