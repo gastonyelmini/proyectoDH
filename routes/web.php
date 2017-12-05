@@ -11,15 +11,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 /*
 Rutas realacionadas con editar usuario
-Rutas Juan
 */
 Route::post('/edit-user', 'User_edit_controller@updateUserInfo')->name('edit-user');
 Route::get('/edit-user', 'User_edit_controller@displayView')->name('edit-user');
+Route::get('/checkEmail', 'Auth\RegisterController@checkEmail');
 /*
-Rutas relacionadas con proyectos
-Rutas Gaston
-Con 'middleware' => 'auth' evito que el usuario pueda ingresar a
-las paginas sin estar logueado
+Rutas realcionadas con Proyectos
 */
 Route::get('/add-project', [
     'middleware' => 'auth',
@@ -36,11 +33,21 @@ Route::get('/projects', [
     'uses' => 'ProjectController@showForm'
 ])->name('projects');
 
+Route::get('/add-task', 'AddProjectController@displayTask')->name('add-task');
+
+Route::post('/add-task', 'AddProjectController@addTask')->name('add-task');
+
+/*
+Rutas relacionadas con amigos
+*/
 Route::get('/add-friend', [
     'middleware' => 'auth',
     'uses' => 'AddFriendController@showUsers'
 ])->name('chat');
 
+/*
+Rutas relaciondas con chat
+*/
 Route::get('/chat', [
     'middleware' => 'auth',
     'uses' => 'ChatController@showChat'
@@ -66,10 +73,3 @@ Route::post('messages', function() {
 // Route::get('/add-task', function () {
 // 	return view('/project/add-task');
 // })->name('add-task');
-
-Route::get('/add-task', 'AddProjectController@displayTask')->name('add-task');
-
-Route::post('/add-task', 'AddProjectController@addTask')->name('add-task');
-
-
-Route::get('/checkEmail', 'Auth\RegisterController@checkEmail');

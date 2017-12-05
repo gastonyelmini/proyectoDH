@@ -295,6 +295,7 @@
                       </li>
                       <li> <a href="{{ route('projects') }}" class="waves-effect"><i data-icon="n" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Projects</span></a> </li>
                       <li> <a href="{{ route('add-project') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Add project</span></a> </li>
+                      <li> <a href="" class="waves-effect"><i data-icon="W" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Friends</span></a> </li>
                       <li> <a href="{{ route('chat') }}" class="waves-effect"><i data-icon="-" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Chat</span></a> </li>
 
                       <li>
