@@ -18,6 +18,7 @@
 </div>
 
 @if(session()->get('title'))
+<div class="row">
 	<div class="col-md-12">
 		<p class="alert alert-info">
 			{{ "El proyecto " . session()->get('title') . " ha sido creado exitosamente." }}
@@ -26,6 +27,7 @@
 </div>
 @endif
 @if(session()->get('taskCreated'))
+<div class="row">
 	<div class="col-md-12">
 		<p class="alert alert-info">
 			{{ session()->get('taskCreated') }}
@@ -44,7 +46,7 @@
                 <div class="form-group row">
                   <label for="example-text-input" class="col-2 col-form-label">Title</label>
                   <div class="col-10">
-                      <input class="form-control" name="title" type="text" placeholder="Plase, insert a task name" id="example-text-input title" value="{{ old('title') }}">
+                      <input required class="form-control" name="title" type="text" placeholder="Plase, insert a task name" id="example-text-input title" value="{{ old('title') }}">
                       @if($errors->has('title'))
       								  <span class="help-block">
       								    <strong>{{ $errors->first('title') }}</strong>
@@ -56,7 +58,7 @@
                 <div class="form-group row">
                     <label for="example-date-input" class="col-2 col-form-label">From</label>
                     <div class="col-10">
-                        <input class="form-control" name="from" type="date" id="example-date-input">
+                        <input required class="form-control" name="from" type="date" id="example-date-input">
                         @if($errors->has('from'))
           								<span class="help-block">
           									<strong>{{ $errors->first('from') }}</strong>
@@ -67,7 +69,7 @@
                 <div class="form-group row">
                     <label for="example-date-input" class="col-2 col-form-label">To</label>
                     <div class="col-10">
-                        <input class="form-control" name="to" type="date" id="example-date-input">
+                        <input required class="form-control" name="to" type="date" id="example-date-input">
                         @if($errors->has('to'))
           								<span class="help-block">
           									<strong>{{ $errors->first('to') }}</strong>
@@ -88,6 +90,52 @@
         </div>
     </div>
 </div>
+
+
+<!-- SECOND SECTION -->
+
+
+<div class="row">
+  <div class="col-sm-12">
+      <div class="white-box">
+          <h3 class="box-title m-b-0">Your tasks</h3>
+          <p class="text-muted m-b-30">Export data to Copy, CSV, Excel, PDF & Print</p>
+          <div class="table-responsive">
+              <table id="example23" class="display nowrap" cellspacing="0" width="100%">
+                  <thead>
+                      <tr>
+                          <th>Title</th>
+                          <th>Start</th>
+                          <th>End</th>
+                      </tr>
+                  </thead>
+                  <tfoot>
+                      <tr>
+                          <th>Title</th>
+                          <th>Start</th>
+                          <th>End</th>
+                      </tr>
+                  </tfoot>
+                  <tbody>
+                    @foreach($tasks as $task)
+                      <tr>
+                          <td>{{ $task->title }}</td>
+                          <td>{{ $task->from }}</td>
+                          <td>{{ $task->to }}</td>
+                      </tr>
+                    @endforeach
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- /.row -->
+
+
+
+
+
 
 
 

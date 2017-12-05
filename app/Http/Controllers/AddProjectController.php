@@ -44,9 +44,10 @@ class AddProjectController extends Controller
       } else {
         $projects = '';
       }
-
+      $tasks = DB::table('tasks')->where('author_id',auth()->user()->id)->get();
       return view('/project/add-task', [
         'projects' => $projects,
+        'tasks' => $tasks,
       ]);
     }
 
