@@ -2,8 +2,6 @@
 
 @section('content')
 
-<?php $users = DB::table('users')->where('id', '!=', Auth::id())->get(); //User::where('id', '!=', Auth::id())->get();?>
-
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Add a friend</h4> </div>
@@ -16,12 +14,12 @@
 <!-- .row -->
 <div class="row el-element-overlay m-b-40">
 		<!-- /.usercard -->
-    @foreach ($users as $user)
+
 		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 			<div class="white-box">
 				<div class="el-card-item">
 					<div class="el-card-avatar el-overlay-1">
-						<img src="/images/profile_images/{{$user->avatar}}" />
+						<img src="/images/profile_images/{{$user->getFriends()}}" />
 						<div class="el-overlay">
 							<ul class="el-info">
 								<li>
@@ -38,7 +36,7 @@
 						</div>
 					</div>
 					<div class="el-card-content">
-						<h3 class="box-title">{{$user->name}}</h3>
+						<h3 class="box-title">{{$user->addFriend(2)}}</h3>
 						<small>{{$user->ocupation}}</small>
 						<br/>
 					</div>
@@ -46,7 +44,6 @@
 			</div>
 		</div>
 		<!-- /.usercard-->
-    @endforeach
 
 	</div>
 	<!-- /.row -->

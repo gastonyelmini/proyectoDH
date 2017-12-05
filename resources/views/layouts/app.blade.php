@@ -1,116 +1,3 @@
-{{-- <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>Boole</title>
-
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/date-calendar-style.css">
-    <link rel="stylesheet" href="css/projects.css">
-    <link rel="stylesheet" href="css/profile-header.css">
-    <link href="https://fonts.googleapis.com/css?family=Syncopate" rel="stylesheet">
-
-    <!-- JUAN ADDED STYLES -->
-
-
-</head>
-<body>
-    <div id="root">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse" aria-expanded="false">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/projects') }}">
-                        Boole
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!--User Avtar-->
-                        @if(Auth::user())
-                          <div class="user-avatar">
-                            <a href="{{ route('edit-user') }}">
-                              <img src="/images/profile_images/{{Auth::user()->avatar}}" alt="">
-                            </a>
-                          </div>
-                        @endif
-                        <!-- Authentication Links -->
-                        @guest
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu">
-                                    <li>
-                                        <a href="{{ route('add-project') }}">
-                                            Add project
-                                        </a>
-
-                                        <a href="{{ route('edit-user') }}">
-                                            Edit
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        @yield('content')
-
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="/js/registerController.js"></script>
-</body>
-</html> --}}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -451,7 +338,7 @@
                       </li>
                       <li> <a href="{{ route('projects') }}" class="waves-effect"><i data-icon="n" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Projects</span></a> </li>
                       <li> <a href="{{ route('add-project') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Add project</span></a> </li>
-                      <li> <a href="" class="waves-effect"><i data-icon="W" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Friends</span></a> </li>
+                      <li> <a href="{{ route('friends') }}" class="waves-effect"><i data-icon="W" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Friends</span></a> </li>
                       <li> <a href="{{ route('chat') }}" class="waves-effect"><i data-icon="-" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Chat</span></a> </li>
 
                       <li>
@@ -562,80 +449,10 @@
             })
         });
     </script>
-    <!--Style Switcher -->
-    <script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
-    <!--Style Switcher -->
-    <script src="plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
-    <script src="js/deleteProjectController.js"></script>
-
-    <script src="/js/app.js"></script>
 
 
-    <!-- ADD TASKS SCRIPTS FOR EXPORT TO PDF AND MORE -->
-    <!-- Custom Theme JavaScript -->
-    <script src="js/custom.min.js"></script>
-    <script src="../plugins/bower_components/datatables/jquery.dataTables.min.js"></script>
-    <!-- start - This is for export functionality only -->
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
-    <script src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js"></script>
-    <!-- end - This is for export functionality only -->
-    <script>
-        $(document).ready(function () {
-            $('#myTable').DataTable();
-            $(document).ready(function () {
-                var table = $('#example').DataTable({
-                    "columnDefs": [
-                        {
-                            "visible": false
-                            , "targets": 2
-                    }
-          ]
-                    , "order": [[2, 'asc']]
-                    , "displayLength": 25
-                    , "drawCallback": function (settings) {
-                        var api = this.api();
-                        var rows = api.rows({
-                            page: 'current'
-                        }).nodes();
-                        var last = null;
-                        api.column(2, {
-                            page: 'current'
-                        }).data().each(function (group, i) {
-                            if (last !== group) {
-                                $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
-                                last = group;
-                            }
-                        });
-                    }
-                });
-                // Order by the grouping
-                $('#example tbody').on('click', 'tr.group', function () {
-                    var currentOrder = table.order()[0];
-                    if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
-                        table.order([2, 'desc']).draw();
-                    }
-                    else {
-                        table.order([2, 'asc']).draw();
-                    }
-                });
-            });
-        });
-        $('#example23').DataTable({
-            dom: 'Bfrtip'
-            , buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
-        });
-    </script>
-    <!--Style Switcher -->
-    <script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
-    <!--Style Switcher -->
-<script src="../plugins/bower_components/styleswitcher/jQuery.style.switcher.js"></script>
+
+
 
 
 </body>

@@ -43,7 +43,12 @@ Rutas relacionadas con amigos
 Route::get('/add-friend', [
     'middleware' => 'auth',
     'uses' => 'AddFriendController@showUsers'
-])->name('chat');
+])->name('add-friend');
+
+Route::get('/friends', [
+    'middleware' => 'auth',
+    'uses' => 'FriendController@showFriends'
+])->name('friends');
 
 /*
 Rutas relaciondas con chat
