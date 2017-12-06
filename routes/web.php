@@ -1,11 +1,14 @@
 <?php
 use App\Events\MessagePosted;
 
+Auth::routes();
+
+/*
+Home e index
+*/
 Route::get('/', function () {
     return view('index');
 });
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -15,6 +18,7 @@ Rutas realacionadas con editar usuario
 Route::post('/edit-user', 'User_edit_controller@updateUserInfo')->name('edit-user');
 Route::get('/edit-user', 'User_edit_controller@displayView')->name('edit-user');
 Route::get('/checkEmail', 'Auth\RegisterController@checkEmail');
+
 /*
 Rutas realcionadas con Proyectos
 */
@@ -44,6 +48,11 @@ Route::get('/add-friend', [
     'middleware' => 'auth',
     'uses' => 'AddFriendController@showUsers'
 ])->name('add-friend');
+
+Route::get('/add-friend-axios/{id}', [
+    'middleware' => 'auth',
+    'uses' => 'AddFriendController@addNewFriend'
+]);
 
 Route::get('/friends', [
     'middleware' => 'auth',

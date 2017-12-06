@@ -17,21 +17,23 @@
 <div class="row el-element-overlay m-b-40">
 		<!-- /.usercard -->
     @foreach ($users as $user)
-		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+		<div class="{{ $user->id }} col-lg-3 col-md-4 col-sm-6 col-xs-12">
 			<div class="white-box">
 				<div class="el-card-item">
 					<div class="el-card-avatar el-overlay-1">
 						<img src="/images/profile_images/{{$user->avatar}}" />
 						<div class="el-overlay">
 							<ul class="el-info">
+								<!-- Ver perfil -->
 								<li>
 									<a class="btn default btn-outline image-popup-vertical-fit" href="../plugins/images/users/1.jpg">
 										<i class="icon-magnifier"></i>
 									</a>
 								</li>
+								<!-- Agregar amigo -->
 								<li>
-									<a class="btn default btn-outline" href="javascript:void(0);">
-										<i class="icon-link"></i>
+									<a id="{{ $user->id }}" class="btn default btn-outline addFriend" >
+										<i class="icon-plus"></i>
 									</a>
 								</li>
 							</ul>

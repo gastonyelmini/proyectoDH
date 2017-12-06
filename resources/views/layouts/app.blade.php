@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+
     <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
     <title>Boole - The best way to organize your projects</title>
     <!-- Bootstrap Core CSS -->
@@ -32,6 +33,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
 </head>
 <body class="fix-header fix-sidebar">
     <!-- Preloader -->
@@ -368,6 +370,9 @@
       <!-- /#wrapper -->
     </div>
 
+    <script src="/js/app.js"></script>
+    <script src="/js/ajaxRequests.js"></script>
+
     <!-- Axios Vue -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
@@ -449,12 +454,6 @@
             })
         });
     </script>
-
-
-
-
-
-
 </body>
 
 </html>
