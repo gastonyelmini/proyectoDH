@@ -2,6 +2,7 @@ var app = new Vue({
   el: "#projectsRoot",
 
   methods: {
+    
     closeProject: function(id) {
       document.getElementById(id).style.display = 'none'
     
@@ -14,6 +15,8 @@ var app = new Vue({
         })
 
     },
+
+    
     completeProject: function(id) {
       document.getElementById(id).style.display = 'none'
     }
