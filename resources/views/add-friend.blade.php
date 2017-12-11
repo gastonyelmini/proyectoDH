@@ -24,7 +24,7 @@
 							<ul class="el-info">
 								<!-- Ver perfil -->
 								<li>
-									<a class="btn default btn-outline image-popup-vertical-fit" href="../plugins/images/users/1.jpg">
+									<a class="btn default btn-outline image-popup-vertical-fit" href="/images/profile_images/{{$user->avatar}}">
 										<i class="icon-magnifier"></i>
 									</a>
 								</li>
@@ -39,7 +39,7 @@
 					</div>
 					<div class="el-card-content">
 						<h3 class="box-title">{{$user->name}}</h3>
-						<small>{{$user->ocupation}}</small>
+						<small>{{$user->email}}</small>
 						<br/>
 					</div>
 				</div>
