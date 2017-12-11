@@ -44,7 +44,7 @@ class AddProjectController extends Controller
       } else {
         $projects = '';
       }
-      $tasks = DB::table('tasks')->where('author_id',auth()->user()->id)->get();
+      $tasks = DB::table('tasks')->where('project_id',$_GET['id'])->get();
       return view('/project/add-task', [
         'projects' => $projects,
         'tasks' => $tasks,
@@ -57,10 +57,11 @@ class AddProjectController extends Controller
         'from' => $request['from'],
         'to' => $request['to'],
         'author_id' => auth()->user()->id,
+        'project_id' => $request['project_id'],
       ]);
       $taskTitle = $request['title'];
       return redirect()
-             ->route('add-task')
+             ->route('projects')
              ->with('taskCreated', 'Task ' . $taskTitle . ' created.' );
     }
 }

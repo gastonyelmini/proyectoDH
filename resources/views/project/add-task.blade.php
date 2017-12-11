@@ -46,12 +46,12 @@
                 <div class="form-group row">
                   <label for="example-text-input" class="col-2 col-form-label">Title</label>
                   <div class="col-10">
-                      <input required class="form-control" name="title" type="text" placeholder="Plase, insert a task name" id="example-text-input title" value="{{ old('title') }}">
-                      @if($errors->has('title'))
-      								  <span class="help-block">
-      								    <strong>{{ $errors->first('title') }}</strong>
-      								  </span>
-      								@endif
+                        <input required class="form-control" name="title" type="text" placeholder="Plase, insert a task name" id="example-text-input title" value="{{ old('title') }}">
+                        @if($errors->has('title'))
+                            <span class="help-block">
+                            <strong>{{ $errors->first('title') }}</strong>
+                            </span>
+                        @endif
                   </div>
                 </div>
 
@@ -60,10 +60,10 @@
                     <div class="col-10">
                         <input required class="form-control" name="from" type="date" id="example-date-input">
                         @if($errors->has('from'))
-          								<span class="help-block">
-          									<strong>{{ $errors->first('from') }}</strong>
-          								</span>
-          							@endif
+                            <span class="help-block">
+                                <strong>{{ $errors->first('from') }}</strong>
+                            </span>
+                        @endif
                     </div>
                 </div>
                 <div class="form-group row">
@@ -71,12 +71,14 @@
                     <div class="col-10">
                         <input required class="form-control" name="to" type="date" id="example-date-input">
                         @if($errors->has('to'))
-          								<span class="help-block">
-          									<strong>{{ $errors->first('to') }}</strong>
-          								</span>
-          							@endif
+                            <span class="help-block">
+                                <strong>{{ $errors->first('to') }}</strong>
+                            </span>
+                        @endif
                     </div>
-                </div>
+                </div> 
+              
+                <input type="hidden" class="form-control" id="project_id" name="project_id" value="{{ $projects[0]->id  }}">
 
                 <!-- <div class="form-group row">
                     <label for="example-color-input" class="col-2 col-form-label">Color</label>

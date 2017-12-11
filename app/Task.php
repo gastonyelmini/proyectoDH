@@ -8,6 +8,6 @@ class Task extends Model
 {
   //Fillable de objeto
   protected $fillable = [
-    'title', 'from', 'to', 'author_id', 'description' 
+    'title', 'from', 'to', 'author_id', 'description', 'project_id' 
   ];
 }
