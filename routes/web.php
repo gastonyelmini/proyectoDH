@@ -64,6 +64,11 @@ Route::get('/add-friend-axios/{id}', [
     'uses' => 'AddFriendController@addNewFriend'
 ]);
 
+Route::get('/delete-friend-axios/{id}', [
+    'middleware' => 'auth',
+    'uses' => 'FriendController@deleteFriend'
+]);
+
 Route::get('/friends', [
     'middleware' => 'auth',
     'uses' => 'FriendController@showFriends'

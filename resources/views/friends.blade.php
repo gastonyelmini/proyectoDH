@@ -16,7 +16,7 @@
 		<!-- /.usercard -->
 
 		@foreach ($friends as $friend)
-		<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+		<div class="{{ $friend->id }} col-lg-3 col-md-4 col-sm-6 col-xs-12">
 			<div class="white-box">
 				<div class="el-card-item">
 					<div class="el-card-avatar el-overlay-1">
@@ -32,7 +32,7 @@
 								</li>
 								<!-- Agregar amigo -->
 								<li>
-									<a class="btn default btn-outline addFriend" >
+									<a id="{{ $friend->id }}" class="btn default btn-outline deleteFriend" >
 										<i class="fa fa-trash-o" aria-hidden="true"></i>
 										Delete
 									</a>
