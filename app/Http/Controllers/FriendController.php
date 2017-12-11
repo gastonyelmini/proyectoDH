@@ -8,8 +8,8 @@ use Auth;
 class FriendController extends Controller
 {
   protected function showFriends() {
-    $user = Auth::user();
+    $friends = Auth::user()->getFriends();
 
-    return view('friends', ['user' => $user]);
+    return view('friends', ['friends' => $friends]);
   }
 }

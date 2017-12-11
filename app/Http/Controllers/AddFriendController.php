@@ -11,14 +11,13 @@ class AddFriendController extends Controller
 {
     protected function showUsers() {
 
-      $users = DB::table('users')->where('id', '!=', Auth::id())->get();
+      $users = DB::select( DB::raw("SELECT * FROM users
+      WHERE users.id NOT IN (SELECT friend_id FROM friend_user
+      WHERE user_id = " . Auth::id() . ")
+      AND users.id != " . Auth::id() . ""));
 
       return view('add-friend', ['users' => $users]);
       
-      // SELECT * FROM bool_db.users
-      // INNER JOIN friend_user 
-      // where users.id != user_id
-      // AND users.id != friend_id	
     }
 
     public function addNewFriend($request) {
