@@ -47,7 +47,7 @@
                             {{ $project->description }}
                             @endif
                           </span>
-                          <a id="{{ $project->id }}" href="#">
+                          <a id="{{ $project->id }}" href="/project-display?id={{ $project->id }}">
                             <span class="label label-rounded label-info">View project</span>
                           </a>
                           <a id="{{ $project->id }}" href="/add-task?id={{ $project->id }}">

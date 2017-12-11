@@ -22,6 +22,11 @@ Route::get('/checkEmail', 'Auth\RegisterController@checkEmail');
 /*
 Rutas realcionadas con Proyectos
 */
+Route::get('/project-display', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectDisplayController@showProject'
+])->name('project-display');
+
 Route::get('/add-project', [
     'middleware' => 'auth',
     'uses' => 'AddProjectController@showForm'
