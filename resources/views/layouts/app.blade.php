@@ -191,7 +191,7 @@
         </div>
         <!-- Left navbar-header end -->
 
-    <div id="app">
+    <div>
       <!-- Preloader -->
       <div class="preloader">
           <div class="cssload-speeding-wheel"></div>
@@ -454,6 +454,7 @@
             })
         });
     </script>
+    <script src="js/deleteProjectController.js"></script>
 </body>
 
 </html>
