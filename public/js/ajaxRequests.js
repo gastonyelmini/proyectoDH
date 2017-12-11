@@ -60,7 +60,7 @@ $(document).ready(function () {
 
                         $.toast({
                             heading: 'Friend deleted!'
-                            , text: 'You will find it on friends section'
+                            , text: 'This friend will no longer be available at your friends list'
                             , position: 'top-right'
                             , loaderBg: '#fb9678'
                             , icon: 'info'
@@ -70,10 +70,9 @@ $(document).ready(function () {
                 }
                       
                   })
-                  .catch(function (error) {
-                    alert(error);
-                  })
-            }
+            .catch(function (error) {
+                alert(error);
+            })
+    }
     
-
 });
