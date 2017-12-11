@@ -13,7 +13,9 @@ use Auth;
 class User_edit_controller extends Controller
 {
       public function displayView(){
-            return view('edit-user');
+
+            $actualUser = Auth::User();
+            return view('edit-user', ['actualUser' => $actualUser]);
       }
       public function updateUserInfo (Request $request) {
 
