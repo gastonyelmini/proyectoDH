@@ -402,19 +402,6 @@
     <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
     <script src="plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js"></script>
     <script src="plugins/bower_components/toast-master/js/jquery.toast.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $.toast({
-                heading: 'Bienvenido {{Auth::user()->name}}!'
-                , text: 'Tienes X tareas sin terminar'
-                , position: 'top-right'
-                , loaderBg: '#ff6849'
-                , icon: 'info'
-                , hideAfter: 3500
-                , stack: 6
-            })
-        });
-    </script>
     <!-- jQuery file upload -->
     <script src="plugins/bower_components/dropify/dist/js/dropify.min.js"></script>
     <script>

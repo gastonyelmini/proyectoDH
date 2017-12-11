@@ -25,13 +25,15 @@
 								<!-- Ver perfil -->
 								<li>
 									<a class="btn default btn-outline image-popup-vertical-fit" href="/images/profile_images/{{$user->avatar}}">
-										<i class="icon-magnifier"></i>
+										<i class="fa fa-search" aria-hidden="true"></i>
+										View
 									</a>
 								</li>
 								<!-- Agregar amigo -->
 								<li>
 									<a id="{{ $user->id }}" class="btn default btn-outline addFriend" >
-										<i class="icon-plus"></i>
+										<i class="fa fa-plus-circle" aria-hidden="true"></i>
+										Add Friend
 									</a>
 								</li>
 							</ul>

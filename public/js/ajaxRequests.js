@@ -7,9 +7,9 @@ $(document).ready(function () {
         // console.log(value.getAttribute('id'));
         value.addEventListener('click', function() {
             
-            var app = this;
             var hideClass = value.getAttribute('id')
-            var api = axios.get('/add-friend-axios/' + value.getAttribute('id'))
+            
+            axios.get('/add-friend-axios/' + value.getAttribute('id'))
               .then(function (response) {
                   if(response.data.friendAdded) {
 

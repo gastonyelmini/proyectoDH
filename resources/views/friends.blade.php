@@ -26,13 +26,15 @@
 								<!-- Ver perfil -->
 								<li>
 									<a class="btn default btn-outline image-popup-vertical-fit" href="/images/profile_images/{{$friend->avatar}}">
-										<i class="icon-magnifier"></i>
+										<i class="fa fa-search" aria-hidden="true"></i>
+										View
 									</a>
 								</li>
 								<!-- Agregar amigo -->
 								<li>
 									<a class="btn default btn-outline addFriend" >
-										<i class="icon-plus"></i>
+										<i class="fa fa-trash-o" aria-hidden="true"></i>
+										Delete
 									</a>
 								</li>
 							</ul>
