@@ -41,6 +41,11 @@ Route::get('/add-task', 'AddProjectController@displayTask')->name('add-task');
 
 Route::post('/add-task', 'AddProjectController@addTask')->name('add-task');
 
+Route::get('/delete-project/{id}', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectController@deleteProject'
+]);
+
 /*
 Rutas relacionadas con amigos
 */

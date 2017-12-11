@@ -4,7 +4,6 @@
 @section('content')
 
 
-
 <div id="projectsRoot">
   <div class="row bg-title">
       <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -37,7 +36,7 @@
               @endif
 
               @foreach ($projects as $project)
-              <div class="comment-center">
+              <div id="{{ $project->id }}" class="comment-center">
                   <div class="comment-body">
                       <div class="user-img"> <img src="/images/profile_images/{{Auth::user()->avatar}}" alt="user" class="img-circle"></div>
                       <div class="mail-contnet">
@@ -57,7 +56,7 @@
                           <a id="{{ $project->id }}" href="">
                             <span class="label label-rounded label-info">Collaborators</span>
                           </a>
-                          <a @click="closeProject()" href="javacript:void(0)" class="action">
+                          <a @click="closeProject({{ $project->id }})" href="javacript:void(0)" class="action">
                             <i class="ti-close text-danger"></i>
                           </a>
                           <a @click="completeProject()" href="javacript:void(0)" class="action">
