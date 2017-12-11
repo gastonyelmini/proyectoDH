@@ -2,8 +2,6 @@
 
 @section('content')
 
-<?php $users = DB::table('users')->where('id', '!=', Auth::id())->get(); //User::where('id', '!=', Auth::id())->get();?>
-
 <div class="row bg-title">
     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
         <h4 class="page-title">Add a friend</h4> </div>
