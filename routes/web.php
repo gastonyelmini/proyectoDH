@@ -99,6 +99,3 @@ Route::post('messages', function() {
   return ['status' => 'OK'];
 })->middleware('auth');
 
-// Route::get('/add-task', function () {
-// 	return view('/project/add-task');
-// })->name('add-task');

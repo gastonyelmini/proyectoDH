@@ -1110,7 +1110,7 @@ var app = new Vue({
   methods: {
     addMessage: function addMessage(message) {
       //Agrego a mensages existentes
-      this.messages.push(message);
+      this.messages.unshift(message);
 
       //Persistir a base de datos
       axios.post('/messages', message);
@@ -1132,7 +1132,7 @@ var app = new Vue({
         return u != user;
       });
     }).listen('MessagePosted', function (e) {
-      _this.messages.push({
+      _this.messages.unshift({
         message: e.message.message,
         user: e.user
       });
@@ -48581,12 +48581,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -48602,7 +48596,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       this.$emit('messagesent', {
         message: this.messageText,
         user: {
-          name: $('#wrapper > div.navbar-default.sidebar > div > div > div > a').text(),
+          name: $('#username').text(),
           avatar: filename
         }
       });
@@ -48652,10 +48646,6 @@ var render = function() {
     }),
     _vm._v(" "),
     _c("div", { staticClass: "custom-send" }, [
-      _vm._m(0, false, false),
-      _vm._v(" "),
-      _vm._m(1, false, false),
-      _vm._v(" "),
       _c(
         "button",
         {
@@ -48668,42 +48658,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "cst-icon",
-        attrs: {
-          href: "javacript:void(0)",
-          "data-toggle": "tooltip",
-          title: "Insert Emojis"
-        }
-      },
-      [_c("i", { staticClass: "ti-face-smile" })]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "cst-icon",
-        attrs: {
-          href: "javacript:void(0)",
-          "data-toggle": "tooltip",
-          title: "File Attachment"
-        }
-      },
-      [_c("i", { staticClass: "fa fa-paperclip" })]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

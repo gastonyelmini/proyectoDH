@@ -29,7 +29,7 @@ const app = new Vue({
     methods: {
       addMessage(message) {
         //Agrego a mensages existentes
-        this.messages.push(message);
+        this.messages.unshift(message);
 
         //Persistir a base de datos
         axios.post('/messages', message);
@@ -51,7 +51,7 @@ const app = new Vue({
             this.usersInRoom = this.usersInRoom.filter(u => u != user);
           })
           .listen('MessagePosted', (e) => {
-            this.messages.push({
+            this.messages.unshift({
               message: e.message.message,
               user: e.user
             });
