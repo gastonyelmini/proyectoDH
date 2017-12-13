@@ -8,6 +8,6 @@ class Project extends Model
 {
     //Fillable de objeto
     protected $fillable = [
-      'title', 'description', 'state','author_id'
+      'title', 'description', 'state','author_id', 'progress'
     ];
 }
