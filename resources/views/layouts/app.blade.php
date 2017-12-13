@@ -24,6 +24,8 @@
     <link href="css/animate.css" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="css/style.css" rel="stylesheet">
+    <!-- Edited CSS -->
+    <link href="css/custom-style.css" rel="stylesheet">
     <!-- color CSS -->
     <link href="css/colors/default.css" id="theme" rel="stylesheet">
     <link rel="stylesheet" href="../plugins/bower_components/dropify/dist/css/dropify.min.css">

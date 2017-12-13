@@ -42,7 +42,7 @@
                 <h3 class="box-title">Chat Message</h3> </div>
         </div>
         <div class="chat-box">
-            <ul class="chat-list slimscroll p-t-30">
+            <ul class="chat-list slimscroll p-t-30 chatlog-scroll">
                 <chat-log :messages="messages"></chat-log>
             </ul>
             <div class="row send-chat-box">
