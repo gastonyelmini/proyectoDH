@@ -89,6 +89,22 @@
                     </div>
                 </div> -->
 
+                <div class="form-group">
+                    <label class="col-md-12">Colaborators</label>
+                    <div class="col-md-12">
+                        
+                        <h5 class="m-t-20">Multiple select boxes</h5>
+                        <select name="selectedFriends[]" class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose">
+                            <optgroup label="Add friends to your project">
+                                @foreach($friends as $friend)
+                                    <option value="{{$friend[0]->id}}">{{$friend[0]->name}}</option>
+                                @endforeach
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
+                
                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
             </form>
         </div>

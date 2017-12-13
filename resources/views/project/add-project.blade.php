@@ -33,58 +33,26 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <label class="col-md-12">Colaborators</label>
+                    <div class="col-md-12">
+                        
+                        <h5 class="m-t-20">Multiple select boxes</h5>
+                        <select name="selectedFriends[]" class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose">
+                            <optgroup label="Add friends to your project">
+                                @foreach($friends as $friend)
+                                    <option value="{{$friend->id}}">{{$friend->name}}</option>
+                                @endforeach
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Add project</button>
             </form>
         </div>
     </div>
 </div>
 <!-- /.row -->
-<!-- /.row -->
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Add a new project</div>
-
-                <div class="panel-body">
-                    <form class="form-horizontal" method="POST" action="/add-project">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
-                            <label for="title" class="col-md-4 control-label">Name</label>
-
-                            <div class="col-md-6">
-                                <input id="title" type="text" class="form-control" name="title" placeholder="Plase, insert a project name" value="{{ old('title') }}" required autofocus>
-
-                                @if ($errors->has('title'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('title') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Submit
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
-
-
-
-
-
-
-
-
-
 
 @endsection

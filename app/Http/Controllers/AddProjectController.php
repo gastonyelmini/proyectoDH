@@ -7,25 +7,35 @@ use Illuminate\Http\Request;
 use App\Project;
 use App\Task;
 use App\User;
+use Auth;
 
 class AddProjectController extends Controller
 {
     protected function addProject(Request $request, \Illuminate\Validation\Factory $validator) {
-
-      Project::create([
+       
+      $project = Project::create([
           'title' => $request['title'],
           'description' => $request['description'],
           'state' => 0,
           'author_id' => auth()->user()->id
       ]);
+      
 
 			$validation = $validator->make($request->all(), [
 					'title' => 'required|min:5',
           'description' => 'required|min:5',
-				]);
+        ]);
 				if ($validation->fails()){
 					return redirect('/add-task')->withErrors($validation);
-				}
+        }
+       
+      // dd($request['selectedFriends']);
+      foreach($request['selectedFriends'] as $friendId){
+        DB::table('projects_users')->insert([
+          'id_project' => $project->id,
+          'id_user' => $friendId,
+        ]);
+      }
 
 			return redirect('/projects')->with('title', $request['title']);
       // DB::table('projects')->where('id', auth()->user()->id)->update(['title'=>'Hola']);
@@ -33,7 +43,10 @@ class AddProjectController extends Controller
 
     //Mostrar el form
     protected function showForm() {
-      return view('project/add-project');
+      $friends = Auth::user()->getFriends();
+      return view('project/add-project', [
+        'friends' => $friends,
+      ]);
     }
 
 
@@ -45,9 +58,16 @@ class AddProjectController extends Controller
         $projects = '';
       }
       $tasks = DB::table('tasks')->where('project_id',$_GET['id'])->get();
+
+      $users = DB::table('projects_users')->where('id_project',$_GET['id'])->get();
+      foreach($users as $user) {
+        $friends[] = DB::table('users')->where('id',$user->id_user)->get();
+      }
+
       return view('/project/add-task', [
         'projects' => $projects,
         'tasks' => $tasks,
+        'friends' => $friends,
       ]);
     }
 
