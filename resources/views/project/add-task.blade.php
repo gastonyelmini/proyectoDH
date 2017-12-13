@@ -114,7 +114,7 @@
 
 <!-- SECOND SECTION -->
 
-
+@if($tasks->toArray())
 <div class="row">
   <div class="col-sm-12">
       <div class="white-box">
@@ -152,6 +152,7 @@
       </div>
   </div>
 </div>
+@endif
 <!-- /.row -->
 
 

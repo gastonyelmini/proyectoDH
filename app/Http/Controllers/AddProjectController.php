@@ -70,8 +70,6 @@ class AddProjectController extends Controller
         }
       }
         
-      
-
       return view('/project/add-task', [
         'projects' => $projects,
         'tasks' => $tasks,
@@ -80,6 +78,7 @@ class AddProjectController extends Controller
     }
 
     public function addTask(Request $request) {
+      
       $task = Task::create([
         'title' => $request['title'],
         'from' => $request['from'],
@@ -88,17 +87,18 @@ class AddProjectController extends Controller
         'project_id' => $request['project_id'],
         'progress' => 0
       ]);
-
       
-      foreach($request['selectedFriends'] as $friendId){
-        DB::table('tasks_users')->insert([
-          'id_task' => $task->id,
-          'id_user' => $friendId,
-        ]);
+      if($request['selectedFriends']) {
+        foreach($request['selectedFriends'] as $friendId){
+          DB::table('tasks_users')->insert([
+            'id_task' => $task->id,
+            'id_user' => $friendId,
+          ]);
+        }
       }
 
-
       $taskTitle = $request['title'];
+      
       return redirect()
              ->route('projects')
              ->with('taskCreated', 'Task ' . $taskTitle . ' created.' );
