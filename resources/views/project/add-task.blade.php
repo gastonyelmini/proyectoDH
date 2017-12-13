@@ -40,7 +40,9 @@
     <div class="col-sm-12">
         <div class="white-box">
             <h3 class="box-title m-b-0">Add task</h3>
-            <p class="text-muted m-b-30 font-13"> Add a class to your project </p>
+            <p class="text-muted m-b-30 font-13"> Add a task to your project: @if($projects)
+           {{ $projects[0]->title }}
+          @endif</p>
             <form class="form" method="POST" action="/add-task">
                 {{ csrf_field() }}
                 <div class="form-group row">
@@ -100,7 +102,9 @@
 <div class="row">
   <div class="col-sm-12">
       <div class="white-box">
-          <h3 class="box-title m-b-0">Your tasks</h3>
+          <h3 class="box-title m-b-0">@if($projects)
+           {{ $projects[0]->title }} 
+          @endif - task list</h3>
           <p class="text-muted m-b-30">Export data to Copy, CSV, Excel, PDF & Print</p>
           <div class="table-responsive">
               <table id="example23" class="display nowrap" cellspacing="0" width="100%">
