@@ -83,7 +83,7 @@ Route::get('/chat', [
 ])->name('chat');
 
 Route::get('messages', function() {
-  return App\Message::with('user')->get();
+  return App\Message::with('user')->orderBy('id', 'DESC')->get();
 })->middleware('auth');
 
 Route::post('messages', function() {
