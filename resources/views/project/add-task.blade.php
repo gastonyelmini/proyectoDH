@@ -88,7 +88,7 @@
                         <input class="form-control" type="color" value="#563d7c" id="example-color-input">
                     </div>
                 </div> -->
-
+                @if($friends) 
                 <div class="form-group">
                     <label class="col-md-12">Colaborators</label>
                     <div class="col-md-12">
@@ -103,7 +103,7 @@
                         </select>
                     </div>
                 </div>
-
+                @endif
                 
                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Submit</button>
             </form>
