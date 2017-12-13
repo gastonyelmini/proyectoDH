@@ -370,12 +370,13 @@
       <!-- /#wrapper -->
     </div>
 
-    <script src="/js/app.js"></script>
-    <script src="/js/ajaxRequests.js"></script>
-
     <!-- Axios Vue -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/ajaxRequests.js"></script>
+    <script src="js/deleteProjectController.js"></script>
 
     <!-- jQuery -->
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
@@ -441,7 +442,8 @@
             })
         });
     </script>
-    <script src="js/deleteProjectController.js"></script>
+    
+
 </body>
 
 </html>
