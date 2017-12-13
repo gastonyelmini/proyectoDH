@@ -4400,7 +4400,8 @@ table.focus-on tbody tr.focused th {
     border: 0;
     border-radius: 0;
     box-shadow: none;
-    float: none
+    float: none;
+    padding: 10px 15px;
 }
 
 .form-material .form-control.focus,

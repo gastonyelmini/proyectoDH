@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Auth;
+use DB;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -42,10 +43,19 @@ class User extends Authenticatable
 
     public function addFriend($id) {
       Auth::user()->friends()->attach([$id]);
+      //Get the added friend to generate a two way relationship
+      DB::table('friend_user')->insert(
+        ['friend_id' => Auth::user()->id, 'user_id' => $id]
+      );
     }
 
     public function removeFriend($id) {
       Auth::user()->friends()->detach([$id]);
+      DB::table('friend_user')
+        ->where('friend_id', '=', Auth::user()->id)
+        ->where('user_id', '=', $id)
+        ->delete();
+
     }
 
     public function syncFriend($id) {
