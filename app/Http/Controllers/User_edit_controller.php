@@ -15,7 +15,11 @@ class User_edit_controller extends Controller
       public function displayView(){
 
             $actualUser = Auth::User();
-            return view('edit-user', ['actualUser' => $actualUser]);
+            $tasksAsigned = count(DB::table('tasks_users')->where('id_user',auth()->user()->id)->get());
+            return view('edit-user', [
+                  'actualUser' => $actualUser,
+                  'tasksAsigned' => $tasksAsigned
+            ]);
       }
       public function updateUserInfo (Request $request) {
 

@@ -23,10 +23,10 @@ class AddProjectController extends Controller
 
 			$validation = $validator->make($request->all(), [
 					'title' => 'required|min:5',
-          'description' => 'required|min:5',
+          'description' => 'required',
         ]);
 				if ($validation->fails()){
-					return redirect('/add-task')->withErrors($validation);
+					return redirect('/projects')->withErrors($validation);
         }
        
       // dd($request['selectedFriends']);
