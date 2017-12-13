@@ -72,13 +72,23 @@ class AddProjectController extends Controller
     }
 
     public function addTask(Request $request) {
-      Task::create([
+      $task = Task::create([
         'title' => $request['title'],
         'from' => $request['from'],
         'to' => $request['to'],
         'author_id' => auth()->user()->id,
         'project_id' => $request['project_id'],
+        'progress' => 0
       ]);
+
+      foreach($request['selectedFriends'] as $friendId){
+        DB::table('tasks_users')->insert([
+          'id_task' => $task->id,
+          'id_user' => $friendId,
+        ]);
+      }
+
+
       $taskTitle = $request['title'];
       return redirect()
              ->route('projects')
