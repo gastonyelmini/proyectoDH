@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -29,6 +30,14 @@ class HomeController extends Controller
         $weather = json_decode($jsonWeather, true);
         //Get number of active projects
         $activeProjects = DB::table('projects')->where("author_id", auth()->user()->id)->count();
-        return view('home', ['activeProjects' => $activeProjects], ['weather' => $weather]);
+        $tasksAsigned = count(DB::table('tasks_users')->where('id_user',auth()->user()->id)->get());
+        $actualUser = Auth::User();
+
+        return view('home', [
+            'activeProjects' => $activeProjects,
+            'tasksAsigned' => $tasksAsigned,
+            'actualUser' => $actualUser ,
+        
+            ], ['weather' => $weather]);
     }
 }

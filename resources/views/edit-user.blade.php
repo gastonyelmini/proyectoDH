@@ -35,8 +35,8 @@
 											<h1>{{count($actualUser->getProjects())}}</h1>
 									</div>
 									<div class="col-md-4 col-sm-4 text-center">
-											<p class="text-danger"><i class="ti-dribbble"></i></p>
-											<h1>556</h1>
+											<p class="text-danger">Tasks asigned</p>
+											<h1>{{ $tasksAsigned }}</h1>
 									</div>
 									<div class="stats-row col-md-12 m-t-20 m-b-0 text-center">
 											<div class="stat-item">
