@@ -55,7 +55,6 @@ class User extends Authenticatable
         ->where('friend_id', '=', Auth::user()->id)
         ->where('user_id', '=', $id)
         ->delete();
-
     }
 
     public function syncFriend($id) {
