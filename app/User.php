@@ -29,6 +29,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function getProjects() {
+      $projects = DB::table('projects')
+      ->where('author_id', '=', Auth::user()->id)
+      ->get();
+      return $projects;
+    }
+
     public function messages() {
       return $this->hasMany(Message::class);
     }

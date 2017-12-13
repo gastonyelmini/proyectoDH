@@ -1,12 +1,18 @@
-
 /* Chat style */
 .chatlog-scroll {
-    height: 300px !important;
-    overflow: scroll;
+  height: 300px !important;
+  overflow: scroll;
+}
+.no-friends {
+  width: 100%;
+}
+.no-friends h3 {
+  text-align: center;
+}
+/* Tablets */
+@media (min-width: 768px) {
 }
 
-/* Tablets */ 
-@media(min-width: 768px) {}
-
-/* Desktop */ 
-@media(min-width: 992px) {}
+/* Desktop */
+@media (min-width: 992px) {
+}

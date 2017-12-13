@@ -29,6 +29,8 @@
     <!-- color CSS -->
     <link href="css/colors/default.css" id="theme" rel="stylesheet">
     <link rel="stylesheet" href="../plugins/bower_components/dropify/dist/css/dropify.min.css">
+    <!-- Emojy -->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -162,9 +164,15 @@
             <div class="sidebar-nav navbar-collapse slimscrollsidebar">
                 <div class="user-profile">
                     <div class="dropdown user-pro-body">
-                        <div><img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle"></div> <a id="username" href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}<span class="caret"></span></a>
+                        <div>
+                            <img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle">
+                        </div> 
+                        <a id="username" href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}<span class="caret"></span></a>
                         <ul class="dropdown-menu animated flipInY">
-                            <li><a href="{{ route('edit-user') }}"><i class="ti-user"></i> My Profile</a></li>
+                            <li>
+                                <a href="{{ route('edit-user') }}">
+                                <i class="ti-user"></i> My Profile</a>
+                            </li>
                         </ul>
                     </div>
                 </div>

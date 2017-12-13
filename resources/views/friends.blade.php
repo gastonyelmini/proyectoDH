@@ -11,6 +11,21 @@
     <!-- /.col-lg-12 -->
 </div>
 
+<!-- Si el user no tiene amigos -->
+@if(count($friends) == 0)
+
+<!-- .row -->
+<div class="row el-element-overlay m-b-40">
+	<div class="no-friends">
+		<h3>You have no <strong>friends</strong> <i class="em em-cry"></i></h3>
+	</div>
+</div>
+<!-- /.row -->
+
+@endif 
+
+
+<!-- Si el user SI tiene amigos -->
 <!-- .row -->
 <div class="row el-element-overlay m-b-40">
 		<!-- /.usercard -->
