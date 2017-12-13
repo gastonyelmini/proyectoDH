@@ -37,7 +37,25 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
+    <style>
+		body {
+			font-family: sans-serif;
+			background: #ccc;
+		}
+		.container {
+			width: 80%;
+			margin: 0 auto;
+		}
+		.gantt-container {
+			overflow: scroll;
+		}
+		/* custom class */
+		.gantt .bar-milestone .bar-progress {
+			fill: tomato;
+		}
+	</style>
+
 </head>
 <body class="fix-header fix-sidebar">
     <!-- Preloader -->
@@ -166,7 +184,7 @@
                     <div class="dropdown user-pro-body">
                         <div>
                             <img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle">
-                        </div> 
+                        </div>
                         <a id="username" href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}<span class="caret"></span></a>
                         <ul class="dropdown-menu animated flipInY">
                             <li>
@@ -387,6 +405,7 @@
     <script src="/js/app.js"></script>
     <script src="/js/ajaxRequests.js"></script>
     <script src="js/deleteProjectController.js"></script>
+    
 
     <!-- jQuery -->
     <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
@@ -452,6 +471,12 @@
             })
         });
     </script>
+
+    <!-- Gantt controller -->
+    <script src='/js/moment/min/moment.min.js'></script>
+    <script src='/js/snapsvg/dist/snap.svg-min.js'></script>
+    <script src='/js/frappe-gantt/dist/frappe-gantt.js'></script>
+    <script src='/js/frappe-gantt/controller/gant_controller.js'></script>
     
 
 </body>
