@@ -16,6 +16,7 @@ class ProjectController extends Controller
       $id = $request;
 
       DB::table('projects')->where("id", $id)->delete();
+      DB::table('tasks')->where("project_id", $id)->delete();
       $response = [
         'ID' => $id,
       ];
@@ -27,6 +28,7 @@ class ProjectController extends Controller
 
     public function showCollaborators($request) {
       $tasksWithCollaborators = [];
+      $collaborators = [];
       $tasks = DB::table('tasks')->where("project_id", $request)->get();
       foreach($tasks as $task) {
         $users = DB::table('tasks_users')->where("id_task", $task->id)->get();

@@ -112,7 +112,7 @@
 </div>
 
 
-<!-- SECOND SECTION -->
+<!-- SECOND SECTION
 
 @if($tasks->toArray())
 <div class="row">
@@ -152,7 +152,7 @@
       </div>
   </div>
 </div>
-@endif
+@endif -->
 <!-- /.row -->
 
 

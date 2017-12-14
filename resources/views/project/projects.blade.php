@@ -51,10 +51,10 @@
                             <span class="label label-rounded label-info">View project</span>
                           </a>
                           <a id="{{ $project->id }}" href="/add-task?id={{ $project->id }}">
-                            <span class="label label-rounded label-info">Tasks</span>
+                            <span class="label label-rounded label-info">Add tasks</span>
                           </a>
                           <a id="{{ $project->id }}" href="/collaborators/{{ $project->id }}">
-                            <span class="label label-rounded label-info">Collaborators</span>
+                            <span class="label label-rounded label-info">Tasks and collaborators</span>
                           </a>
                           <a @click="closeProject({{ $project->id }})" href="javacript:void(0)" class="action">
                             <i class="ti-close text-danger"></i>

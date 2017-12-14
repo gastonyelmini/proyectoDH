@@ -24,13 +24,15 @@
         <div class="white-box">
             <h3 class="box-title">{{$taskAndCollaborators['task']->title}}</h3>
             <div class="row text-center">
-                @foreach($taskAndCollaborators['collaborators'] as $collaborators)
-                    <div class="col-sm-4">
-                        <p style="text-align: center; margin-bottom: -10px;">{{strtoupper ($collaborators[0]->name)}}</p>
-                        <div class="chart easy-pie-chart-1" data-percent="{{$taskAndCollaborators['task']->progress}}"> <span><img src="/images/profile_images/{{$collaborators[0]->avatar}}" alt="user" class="img-circle"/></span> </div>
-                    </div>
-                    
-                @endforeach
+                @if($taskAndCollaborators['collaborators'])
+                    @foreach($taskAndCollaborators['collaborators'] as $collaborators)
+                        <div class="col-sm-4">
+                            <p style="text-align: center; margin-bottom: -10px;">{{strtoupper ($collaborators[0]->name)}}</p>
+                            <div class="chart easy-pie-chart-1" data-percent="{{$taskAndCollaborators['task']->progress}}"> <span><img src="/images/profile_images/{{$collaborators[0]->avatar}}" alt="user" class="img-circle"/></span> </div>
+                        </div>
+                        
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
