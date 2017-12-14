@@ -26,10 +26,18 @@ class ProjectDisplayController extends Controller
             ->get();
 
         //Armo la respuesta
-        $response = [
-            'project' => $projectRequested,
-            'projectTasks' => $projectRequestedTasks
-        ];
+        if(count($projectRequestedTasks) > 0) {
+            $response = [
+                'error' => false,
+                'project' => $projectRequested,
+                'projectTasks' => $projectRequestedTasks
+            ];
+        } else {
+            $response = [
+                'error' => true,
+                'noProjectTasks' => true
+            ];
+        }
 
         header('Content-Type: application/json');
         echo(json_encode($response));

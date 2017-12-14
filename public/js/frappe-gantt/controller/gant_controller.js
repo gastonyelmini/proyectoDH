@@ -7,21 +7,23 @@ if (document.querySelector(".gantt-master")) {
   axios
     .get("/get-project-axios/" + projectId)
     .then(function(response) {
-      tasksArray = Object.entries(response.data.projectTasks);
+      if (!response.data.error) {
+        tasksArray = Object.entries(response.data.projectTasks);
 
-      for (var i = 0; i < tasksArray.length; i++) {
-        var singleTask = Object.entries(tasksArray[i][1]);
+        for (var i = 0; i < tasksArray.length; i++) {
+          var singleTask = Object.entries(tasksArray[i][1]);
 
-        gantTasks.push({
-          id: singleTask[0][1],
-          name: singleTask[1][1],
-          start: singleTask[2][1],
-          end: singleTask[3][1],
-          progress: singleTask[9][1]
-        });
+          gantTasks.push({
+            id: singleTask[0][1],
+            name: singleTask[1][1],
+            start: singleTask[2][1],
+            end: singleTask[3][1],
+            progress: singleTask[9][1]
+          });
+        }
+
+        var gantt = new Gantt("#gantt", gantTasks);
       }
-
-      var gantt = new Gantt("#gantt", gantTasks);
     })
     .catch(function(error) {
       alert(error);
