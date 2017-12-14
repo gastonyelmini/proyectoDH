@@ -563,10 +563,10 @@
     </script>
     
     <!-- Gantt controller -->
-    <script src='{{ URL::asset('/js/moment/min/moment.min.js') }}'></script>
-    <script src='{{ URL::asset('/js/snapsvg/dist/snap.svg-min.js') }}'></script>
-    <script src='{{ URL::asset('/js/frappe-gantt/dist/frappe-gantt.js') }}'></script>
-    <script src='{{ URL::asset('/js/frappe-gantt/controller/gant_controller.js') }}'></script>
+    <script src="{{ URL::asset('/js/moment/min/moment.min.js') }}"></script>
+    <script src="{{ URL::asset('/js/snapsvg/dist/snap.svg-min.js') }}"></script>
+    <script src="{{ URL::asset('/js/frappe-gantt/dist/frappe-gantt.js') }}"></script>
+    <script src="{{ URL::asset('/js/frappe-gantt/controller/gant_controller.js') }}"></script>
     
     
 </body>
