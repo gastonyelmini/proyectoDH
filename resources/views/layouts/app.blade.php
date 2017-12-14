@@ -12,23 +12,23 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
     <title>Boole - The best way to organize your projects</title>
     <!-- Bootstrap Core CSS -->
-    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
+    <link href="{{ URL::asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ URL::asset('plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css') }}" rel="stylesheet">
     <!-- Menu CSS -->
-    <link href="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+    <link href="{{ URL::asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css') }}" rel="stylesheet">
     <!-- toast CSS -->
-    <link href="plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
+    <link href="{{ URL::asset('plugins/bower_components/toast-master/css/jquery.toast.css') }}" rel="stylesheet">
     <!-- morris CSS -->
-    <link href="plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+    <link href="{{ URL::asset('plugins/bower_components/morrisjs/morris.css') }}" rel="stylesheet">
     <!-- animation CSS -->
-    <link href="css/animate.css" rel="stylesheet">
+    <link href="{{ URL::asset('css/animate.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="{{ URL::asset('css/style.css') }}" rel="stylesheet">
     <!-- Edited CSS -->
-    <link href="css/custom-style.css" rel="stylesheet">
+    <link href="{{ URL::asset('css/custom-style.css') }}" rel="stylesheet">
     <!-- color CSS -->
-    <link href="css/colors/default.css" id="theme" rel="stylesheet">
-    <link rel="stylesheet" href="../plugins/bower_components/dropify/dist/css/dropify.min.css">
+    <link href="{{ URL::asset('css/colors/default.css') }}" id="theme" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('plugins/bower_components/dropify/dist/css/dropify.min.css') }}">
     <!-- Emojy -->
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -38,13 +38,13 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Multiselect -->
-    <link href="plugins/bower_components/multiselect/css/multi-select.css" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::asset('plugins/bower_components/multiselect/css/multi-select.css') }}" rel="stylesheet" type="text/css" />
     <!-- add project selector -->
-    <link href="plugins/bower_components/custom-select/custom-select.css" rel="stylesheet" type="text/css" />
-    <link href="plugins/bower_components/switchery/dist/switchery.min.css" rel="stylesheet" />
-    <link href="plugins/bower_components/bootstrap-select/bootstrap-select.min.css" rel="stylesheet" />
-    <link href="plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css" rel="stylesheet" />
-    <link href="plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link href="{{ URL::asset('plugins/bower_components/custom-select/custom-select.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::asset('plugins/bower_components/switchery/dist/switchery.min.css') }}" rel="stylesheet" />
+    <link href="{{ URL::asset('plugins/bower_components/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
+    <link href="{{ URL::asset('plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}" rel="stylesheet" />
+    <link href="{{ URL::asset('plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet" />
     
     <style>
 		body {
@@ -410,38 +410,38 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://unpkg.com/vue"></script>
 
-    <script src="/js/app.js"></script>
-    <script src="/js/ajaxRequests.js"></script>
-    <script src="js/deleteProjectController.js"></script>
+    <script src="{{ URL::asset('/js/app.js') }}"></script>
+    <script src="{{ URL::asset('/js/ajaxRequests.js') }}"></script>
+    <script src="{{ URL::asset('js/deleteProjectController.js') }}"></script>
     
 
     <!-- jQuery -->
-    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="{{ URL::asset('plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap Core JavaScript -->
-    <script src="bootstrap/dist/js/tether.min.js"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js"></script>
+    <script src="{{ URL::asset('bootstrap/dist/js/tether.min.js') }}"></script>
+    <script src="{{ URL::asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js') }}"></script>
     <!-- Menu Plugin JavaScript -->
-    <script src="plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <script src="{{ URL::asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js') }}"></script>
     <!--slimscroll JavaScript -->
-    <script src="js/jquery.slimscroll.js"></script>
+    <script src="{{ URL::asset('js/jquery.slimscroll.js') }}"></script>
     <!--Wave Effects -->
-    <script src="js/waves.js"></script>
+    <script src="{{ URL::asset('js/waves.js') }}"></script>
     <!--Counter js -->
-    <script src="plugins/bower_components/waypoints/lib/jquery.waypoints.js"></script>
-    <script src="plugins/bower_components/counterup/jquery.counterup.min.js"></script>
+    <script src="{{ URL::asset('plugins/bower_components/waypoints/lib/jquery.waypoints.js') }}"></script>
+    <script src="{{ URL::asset('plugins/bower_components/counterup/jquery.counterup.min.js') }}"></script>
     <!--Morris JavaScript -->
-    <script src="plugins/bower_components/raphael/raphael-min.js"></script>
-    <script src="plugins/bower_components/morrisjs/morris.js"></script>
+    <script src="{{ URL::asset('plugins/bower_components/raphael/raphael-min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/bower_components/morrisjs/morris.js') }}"></script>
     <!-- Custom Theme JavaScript -->
-    <script src="js/custom.min.js"></script>
-    <script src="js/dashboard1.js"></script>
+    <script src="{{ URL::asset('js/custom.min.js') }}"></script>
+    <script src="{{ URL::asset('js/dashboard1.js') }}"></script>
     <!-- Sparkline chart JavaScript -->
-    <script src="plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js"></script>
-    <script src="plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js"></script>
-    <script src="plugins/bower_components/toast-master/js/jquery.toast.js"></script>
+    <script src="{{ URL::asset('plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js') }}"></script>
+    <script src="{{ URL::asset('plugins/bower_components/toast-master/js/jquery.toast.js') }}"></script>
     <!-- jQuery file upload -->
-    <script src="plugins/bower_components/dropify/dist/js/dropify.min.js"></script>
+    <script src="{{ URL::asset('plugins/bower_components/dropify/dist/js/dropify.min.js') }}"></script>
     <script>
         $(document).ready(function () {
             // Basic
@@ -481,12 +481,12 @@
     </script>
 
     <!-- multiselect -->
-    <script src="plugins/bower_components/switchery/dist/switchery.min.js"></script>
-    <script src="plugins/bower_components/custom-select/custom-select.min.js" type="text/javascript"></script>
-    <script src="plugins/bower_components/bootstrap-select/bootstrap-select.min.js" type="text/javascript"></script>
-    <script src="plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
-    <script src="plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="plugins/bower_components/multiselect/js/jquery.multi-select.js"></script>
+    <script src="{{ URL::asset('plugins/bower_components/switchery/dist/switchery.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/bower_components/custom-select/custom-select.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('plugins/bower_components/bootstrap-select/bootstrap-select.min.js') }}" type="text/javascript"></script>
+    <script src="{{ URL::asset('plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
+    <script src="{{ URL::asset('plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js') }}" type="text/javascript"></script>
+    <script type="text/javascript" src="{{ URL::asset('plugins/bower_components/multiselect/js/jquery.multi-select.js') }}"></script>
     <script>
         jQuery(document).ready(function () {
             // Switchery
@@ -563,10 +563,10 @@
     </script>
     
     <!-- Gantt controller -->
-    <script src='/js/moment/min/moment.min.js'></script>
-    <script src='/js/snapsvg/dist/snap.svg-min.js'></script>
-    <script src='/js/frappe-gantt/dist/frappe-gantt.js'></script>
-    <script src='/js/frappe-gantt/controller/gant_controller.js'></script>
+    <script src='{{ URL::asset('/js/moment/min/moment.min.js') }}'></script>
+    <script src='{{ URL::asset('/js/snapsvg/dist/snap.svg-min.js') }}'></script>
+    <script src='{{ URL::asset('/js/frappe-gantt/dist/frappe-gantt.js') }}'></script>
+    <script src='{{ URL::asset('/js/frappe-gantt/controller/gant_controller.js') }}'></script>
     
     
 </body>

@@ -22,10 +22,15 @@ Route::get('/checkEmail', 'Auth\RegisterController@checkEmail');
 /*
 Rutas realcionadas con Proyectos
 */
-Route::get('/project-display', [
+Route::post('/get-project-axios/{id}', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectDisplayController@getProjectAxios'
+]);
+
+Route::get('/project-display/{id}', [
     'middleware' => 'auth',
     'uses' => 'ProjectDisplayController@showProject'
-])->name('project-display');
+]);
 
 Route::get('/add-project', [
     'middleware' => 'auth',
@@ -50,6 +55,8 @@ Route::get('/delete-project/{id}', [
     'middleware' => 'auth',
     'uses' => 'ProjectController@deleteProject'
 ]);
+
+
 
 /*
 Rutas relacionadas con amigos
