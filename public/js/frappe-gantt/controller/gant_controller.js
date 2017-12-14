@@ -1,65 +1,45 @@
 /* Busco el id de proyecto que le asigne en el blade */
 var projectId = document.querySelector(".gantt-master").id;
-var tasksObj = {};
 var tasksArray = [];
+var gantTasks = [];
 
 axios
   .get("/get-project-axios/" + projectId)
   .then(function(response) {
     tasksArray = Object.entries(response.data.projectTasks);
-    console.log(tasksArray);
+
+    for (var i = 0; i < tasksArray.length; i++) {
+      var singleTask = Object.entries(tasksArray[i][1]);
+
+      gantTasks.push({
+        id: singleTask[0][1],
+        name: singleTask[1][1],
+        start: singleTask[2][1],
+        end: singleTask[3][1],
+        progress: singleTask[9][1]
+      });
+    }
+
+    console.log(gantTasks);
+
+    var gantt = new Gantt("#gantt", gantTasks);
   })
   .catch(function(error) {
     alert(error);
   });
 
-console.log(apiResponse);
-
-var names = [
-  ["Redesign website", [0, 12]],
-  ["Write new content", [1, 4]],
-  ["Apply new styles", [3, 6]],
-  ["Review", [7, 7]],
-  ["Deploy", [8, 9]],
-  ["Go Live!", [10, 10]]
-];
-
-var tasks = names.map(function(name, i) {
-  var today = new Date();
-  var start = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-  var end = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-
-  start.setDate(today.getDate() + name[1][0]);
-  end.setDate(today.getDate() + name[1][1]);
-
-  return {
-    start: start,
-    end: end,
-    name: name[0],
-    id: "Task " + i,
-    progress: parseInt(Math.random() * 100, 10)
-  };
-});
-
-tasks[1].progress = 0;
-tasks[1].dependencies = "Task 0";
-tasks[2].dependencies = "Task 1";
-tasks[3].dependencies = "Task 2";
-tasks[5].dependencies = "Task 4";
-tasks[5].custom_class = "bar-milestone";
-
-var gantt_chart = Gantt("#gantt", tasks, {
-  on_click: function(task) {
-    console.log(task);
-  },
-  on_date_change: function(task, start, end) {
-    console.log(task, start, end);
-  },
-  on_progress_change: function(task, progress) {
-    console.log(task, progress);
-  },
-  on_view_change: function(mode) {
-    console.log(mode);
-  }
-});
-console.log(gantt_chart);
+// var gantt_chart = Gantt("#gantt", tasks, {
+//   on_click: function(task) {
+//     console.log(task);
+//   },
+//   on_date_change: function(task, start, end) {
+//     console.log(task, start, end);
+//   },
+//   on_progress_change: function(task, progress) {
+//     console.log(task, progress);
+//   },
+//   on_view_change: function(mode) {
+//     console.log(mode);
+//   }
+// });
+// console.log(gantt_chart);
