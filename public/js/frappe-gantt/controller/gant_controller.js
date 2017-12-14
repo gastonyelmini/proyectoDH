@@ -21,8 +21,6 @@ if (document.querySelector(".gantt-master")) {
         });
       }
 
-      console.log(gantTasks);
-
       var gantt = new Gantt("#gantt", gantTasks);
     })
     .catch(function(error) {
