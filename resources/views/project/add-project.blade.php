@@ -32,22 +32,21 @@
                         <textarea id="description" name="description" placeholder="Insert a description of your project..." class="form-control" rows="5" required></textarea>
                     </div>
                 </div>
-
+                @if(count($friends) != 0)
                 <div class="form-group">
-                    <label class="col-md-12">Colaborators</label>
-                    <div class="col-md-12">
-                        
-                        <h5 class="m-t-20">Multiple select boxes</h5>
+                    <label class="col-md-12">Collaborators</label>
+                    <div class="col-md-12">       
+                        <!-- <h5 class="m-t-20">Collaborators</h5> -->
                         <select name="selectedFriends[]" class="select2 m-b-10 select2-multiple" multiple="multiple" data-placeholder="Choose">
                             <optgroup label="Add friends to your project">
                                 @foreach($friends as $friend)
                                     <option value="{{$friend->id}}">{{$friend->name}}</option>
                                 @endforeach
                             </optgroup>
-                        </select>
+                        </select>  
                     </div>
                 </div>
-
+                @endif
                 <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Add project</button>
             </form>
         </div>

@@ -46,6 +46,7 @@ class AddProjectController extends Controller
     //Mostrar el form
     protected function showForm() {
       $friends = Auth::user()->getFriends();
+      
       return view('project/add-project', [
         'friends' => $friends,
       ]);
