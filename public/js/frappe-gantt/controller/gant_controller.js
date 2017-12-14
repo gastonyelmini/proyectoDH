@@ -1,32 +1,34 @@
-/* Busco el id de proyecto que le asigne en el blade */
-var projectId = document.querySelector(".gantt-master").id;
-var tasksArray = [];
-var gantTasks = [];
+if (document.querySelector(".gantt-master")) {
+  /* Busco el id de proyecto que le asigne en el blade */
+  var projectId = document.querySelector(".gantt-master").id;
+  var tasksArray = [];
+  var gantTasks = [];
 
-axios
-  .get("/get-project-axios/" + projectId)
-  .then(function(response) {
-    tasksArray = Object.entries(response.data.projectTasks);
+  axios
+    .get("/get-project-axios/" + projectId)
+    .then(function(response) {
+      tasksArray = Object.entries(response.data.projectTasks);
 
-    for (var i = 0; i < tasksArray.length; i++) {
-      var singleTask = Object.entries(tasksArray[i][1]);
+      for (var i = 0; i < tasksArray.length; i++) {
+        var singleTask = Object.entries(tasksArray[i][1]);
 
-      gantTasks.push({
-        id: singleTask[0][1],
-        name: singleTask[1][1],
-        start: singleTask[2][1],
-        end: singleTask[3][1],
-        progress: singleTask[9][1]
-      });
-    }
+        gantTasks.push({
+          id: singleTask[0][1],
+          name: singleTask[1][1],
+          start: singleTask[2][1],
+          end: singleTask[3][1],
+          progress: singleTask[9][1]
+        });
+      }
 
-    console.log(gantTasks);
+      console.log(gantTasks);
 
-    var gantt = new Gantt("#gantt", gantTasks);
-  })
-  .catch(function(error) {
-    alert(error);
-  });
+      var gantt = new Gantt("#gantt", gantTasks);
+    })
+    .catch(function(error) {
+      alert(error);
+    });
+}
 
 // var gantt_chart = Gantt("#gantt", tasks, {
 //   on_click: function(task) {
