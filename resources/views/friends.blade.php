@@ -8,7 +8,7 @@
 		<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> <a href="{{ route('add-friend') }}" class="btn btn-danger pull-right m-l-20 btn-rounded btn-outline hidden-xs hidden-sm waves-effect waves-light">Add a friend</a>
         <?php //echo breadcrumbs(); ?>
     </div>
-    <!-- /.col-lg-12 -->
+    <!-- /.col-lg-12 -	->
 </div>
 
 <!-- Si el user no tiene amigos -->

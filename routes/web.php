@@ -22,7 +22,7 @@ Route::get('/checkEmail', 'Auth\RegisterController@checkEmail');
 /*
 Rutas realcionadas con Proyectos
 */
-Route::post('/get-project-axios/{id}', [
+Route::get('/get-project-axios/{id}', [
     'middleware' => 'auth',
     'uses' => 'ProjectDisplayController@getProjectAxios'
 ]);

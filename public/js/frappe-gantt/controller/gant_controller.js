@@ -1,3 +1,20 @@
+/* Busco el id de proyecto que le asigne en el blade */
+var projectId = document.querySelector(".gantt-master").id;
+var tasksObj = {};
+var tasksArray = [];
+
+axios
+  .get("/get-project-axios/" + projectId)
+  .then(function(response) {
+    tasksArray = Object.entries(response.data.projectTasks);
+    console.log(tasksArray);
+  })
+  .catch(function(error) {
+    alert(error);
+  });
+
+console.log(apiResponse);
+
 var names = [
   ["Redesign website", [0, 12]],
   ["Write new content", [1, 4]],
@@ -6,8 +23,6 @@ var names = [
   ["Deploy", [8, 9]],
   ["Go Live!", [10, 10]]
 ];
-
-var apiProjectResponse = axios.get("get-project-axios");
 
 var tasks = names.map(function(name, i) {
   var today = new Date();

@@ -20,10 +20,15 @@ class ProjectDisplayController extends Controller
         $projectRequested = DB::table('projects')
             ->where('id', '=', $request)
             ->get();
+        
+        $projectRequestedTasks = DB::table('tasks')
+            ->where('project_id', '=', $request)
+            ->get();
 
         //Armo la respuesta
         $response = [
             'project' => $projectRequested,
+            'projectTasks' => $projectRequestedTasks
         ];
 
         header('Content-Type: application/json');
