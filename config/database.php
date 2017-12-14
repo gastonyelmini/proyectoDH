@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'heroku'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,11 +56,11 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
-            'host' => env('DB_HOST', 'ec2-107-22-162-82.compute-1.amazonaws.com'),
+            'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'dds19ftnkeu19c'),
-            'username' => env('DB_USERNAME', 'lhltgzdvaysmua'),
-            'password' => env('DB_PASSWORD', '45e0bb7dcf4a57d9b5896316e9786e505be088ecd856e1d7af2669a7799d6d73'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8',
             'prefix' => '',
             'schema' => 'public',
@@ -78,6 +78,17 @@ return [
             'prefix' => '',
         ],
 
+        'heroku' => [  
+            'driver'   => 'pgsql',
+            'host'     => parse_url(getenv("DATABASE_URL"))["ec2-107-22-162-82.compute-1.amazonaws.com"],
+            'database' => substr(parse_url(getenv("DATABASE_URL"))["postgres://lhltgzdvaysmua:45e0bb7dcf4a57d9b5896316e9786e505be088ecd856e1d7af2669a7799d6d73@ec2-107-22-162-82.compute-1.amazonaws.com:5432/dds19ftnkeu19c"], 1),
+            'username' => parse_url(getenv("DATABASE_URL"))["lhltgzdvaysmua"],
+            'password' => parse_url(getenv("DATABASE_URL"))["45e0bb7dcf4a57d9b5896316e9786e505be088ecd856e1d7af2669a7799d6d73
+            "],
+            'charset'  => 'utf8',
+            'prefix'   => '',
+            'schema'   => 'public',
+        ],
     ],
 
     /*
