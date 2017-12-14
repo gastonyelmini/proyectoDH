@@ -20,21 +20,23 @@ class AddProjectController extends Controller
           'author_id' => auth()->user()->id
       ]);
       
-
 			$validation = $validator->make($request->all(), [
 					'title' => 'required|min:5',
           'description' => 'required',
         ]);
+
 				if ($validation->fails()){
 					return redirect('/projects')->withErrors($validation);
         }
-       
-      // dd($request['selectedFriends']);
-      foreach($request['selectedFriends'] as $friendId){
-        DB::table('projects_users')->insert([
-          'id_project' => $project->id,
-          'id_user' => $friendId,
-        ]);
+      
+      if($request['selectedFriends']) {
+        // dd($request['selectedFriends']);
+        foreach($request['selectedFriends'] as $friendId){
+          DB::table('projects_users')->insert([
+            'id_project' => $project->id,
+            'id_user' => $friendId,
+          ]);
+        }
       }
 
 			return redirect('/projects')->with('title', $request['title']);
@@ -60,10 +62,14 @@ class AddProjectController extends Controller
       $tasks = DB::table('tasks')->where('project_id',$_GET['id'])->get();
 
       $users = DB::table('projects_users')->where('id_project',$_GET['id'])->get();
-      foreach($users as $user) {
-        $friends[] = DB::table('users')->where('id',$user->id_user)->get();
+      
+      $friends = [];
+      if($users){
+        foreach($users as $user) {
+          $friends[] = DB::table('users')->where('id',$user->id_user)->get();
+        }
       }
-
+        
       return view('/project/add-task', [
         'projects' => $projects,
         'tasks' => $tasks,
@@ -72,6 +78,7 @@ class AddProjectController extends Controller
     }
 
     public function addTask(Request $request) {
+      
       $task = Task::create([
         'title' => $request['title'],
         'from' => $request['from'],
@@ -80,16 +87,18 @@ class AddProjectController extends Controller
         'project_id' => $request['project_id'],
         'progress' => 0
       ]);
-
-      foreach($request['selectedFriends'] as $friendId){
-        DB::table('tasks_users')->insert([
-          'id_task' => $task->id,
-          'id_user' => $friendId,
-        ]);
+      
+      if($request['selectedFriends']) {
+        foreach($request['selectedFriends'] as $friendId){
+          DB::table('tasks_users')->insert([
+            'id_task' => $task->id,
+            'id_user' => $friendId,
+          ]);
+        }
       }
 
-
       $taskTitle = $request['title'];
+      
       return redirect()
              ->route('projects')
              ->with('taskCreated', 'Task ' . $taskTitle . ' created.' );
