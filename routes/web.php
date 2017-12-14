@@ -61,6 +61,11 @@ Route::get('/collaborators/{id}',[
     'uses' => 'ProjectController@showCollaborators'
 ]);
 
+Route::get('/assigned-projects', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectController@showAssignedProjects'
+])->name('assigned-projects');
+
 /*
 Rutas relacionadas con amigos
 */

@@ -32,11 +32,12 @@ class HomeController extends Controller
         $activeProjects = DB::table('projects')->where("author_id", auth()->user()->id)->count();
         $tasksAsigned = count(DB::table('tasks_users')->where('id_user',auth()->user()->id)->get());
         $actualUser = Auth::User();
-
+        $projects_user = count(DB::table('projects_users')->where("id_user", auth()->user()->id)->get());
         return view('home', [
             'activeProjects' => $activeProjects,
             'tasksAsigned' => $tasksAsigned,
             'actualUser' => $actualUser ,
+            'assignedProjects' => $projects_user
         
             ], ['weather' => $weather]);
     }
