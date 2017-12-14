@@ -11,7 +11,12 @@ class ProjectDisplayController extends Controller
         $projectRequested = DB::table('projects')
         ->where('id', '=', $request)
         ->get();
-        return view('project.project-display', ['projectRequested' => $projectRequested[0]]);
+
+        $projectRequestedTasks = DB::table('tasks')
+        ->where('project_id', '=', $request)
+        ->get();
+
+        return view('project.project-display', ['projectRequested' => $projectRequested[0]], ['projectTasks' => $projectRequestedTasks]);
     }
 
     public function getProjectAxios($request) {
