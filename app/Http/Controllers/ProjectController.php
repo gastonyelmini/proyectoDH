@@ -24,4 +24,23 @@ class ProjectController extends Controller
       echo(json_encode($response));
       exit;
     }
+
+    public function showCollaborators($request) {
+      $tasksWithCollaborators = [];
+      $tasks = DB::table('tasks')->where("project_id", $request)->get();
+      foreach($tasks as $task) {
+        $users = DB::table('tasks_users')->where("id_task", $task->id)->get();
+        foreach($users as $user) {
+          $collaborators [] = DB::table('users')->where("id", $user->id_user)->get();
+        }
+        $tasksWithCollaborators [] = [
+          'task' => $task,
+          'collaborators' => $collaborators 
+        ];
+      }
+
+      return view('/collaborators', [
+        'tasksAndCollaborators' => $tasksWithCollaborators,
+      ]);
+    }
 }

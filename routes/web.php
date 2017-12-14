@@ -56,7 +56,10 @@ Route::get('/delete-project/{id}', [
     'uses' => 'ProjectController@deleteProject'
 ]);
 
-
+Route::get('/collaborators/{id}',[
+    'middleware' => 'auth',
+    'uses' => 'ProjectController@showCollaborators'
+]);
 
 /*
 Rutas relacionadas con amigos

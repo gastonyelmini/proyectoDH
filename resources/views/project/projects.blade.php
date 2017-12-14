@@ -53,7 +53,7 @@
                           <a id="{{ $project->id }}" href="/add-task?id={{ $project->id }}">
                             <span class="label label-rounded label-info">Tasks</span>
                           </a>
-                          <a id="{{ $project->id }}" href="">
+                          <a id="{{ $project->id }}" href="/collaborators/{{ $project->id }}">
                             <span class="label label-rounded label-info">Collaborators</span>
                           </a>
                           <a @click="closeProject({{ $project->id }})" href="javacript:void(0)" class="action">

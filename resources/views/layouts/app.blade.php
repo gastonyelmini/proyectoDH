@@ -568,7 +568,10 @@
     <script src="{{ URL::asset('/js/frappe-gantt/dist/frappe-gantt.js') }}"></script>
     <script src="{{ URL::asset('/js/frappe-gantt/controller/gant_controller.js') }}"></script>
     
-    
+    <!-- Tasks collaborators pie chart -->
+    <script src="{{ URL::asset('plugins/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js')}}"></script>
+    <script src="{{ URL::asset('plugins/bower_components/jquery.easy-pie-chart/easy-pie-chart.init.js')}}"></script>
+
 </body>
 
 </html>
