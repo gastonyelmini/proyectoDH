@@ -22,26 +22,29 @@ if (document.querySelector(".gantt-master")) {
           });
         }
 
-        var gantt = new Gantt("#gantt", gantTasks);
+        var gantt_chart = Gantt("#gantt", gantTasks, {
+          on_click: function(task) {
+            console.log(task);
+          },
+          on_date_change: function(task, start, end) {
+            console.log(task, start, end);
+          },
+          on_progress_change: function(task, progress) {
+            axios
+              .get("/update-task-progress/" + task["id"] + "/" + progress)
+              .then(function(response) {})
+              .catch(function(error) {
+                alert(error);
+              });
+          },
+          on_view_change: function(mode) {
+            console.log(mode);
+          }
+        });
+        console.log(gantt_chart);
       }
     })
     .catch(function(error) {
       alert(error);
     });
 }
-
-// var gantt_chart = Gantt("#gantt", tasks, {
-//   on_click: function(task) {
-//     console.log(task);
-//   },
-//   on_date_change: function(task, start, end) {
-//     console.log(task, start, end);
-//   },
-//   on_progress_change: function(task, progress) {
-//     console.log(task, progress);
-//   },
-//   on_view_change: function(mode) {
-//     console.log(mode);
-//   }
-// });
-// console.log(gantt_chart);

@@ -49,4 +49,10 @@ class ProjectDisplayController extends Controller
         exit;
     }
 
+    public function updateProgress(Request $request, $id, $newProg) {
+        DB::table('tasks')
+        ->where('id', '=', $id)
+        ->update(['progress' => $newProg]);
+    }
+
 }
