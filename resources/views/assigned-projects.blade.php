@@ -11,9 +11,19 @@
       <!-- /.col-lg-12 -->
   </div>
 
+@if(!$projects)
+<!-- .row -->
+<div class="row el-element-overlay m-b-40">
+	<div class="no-friends">
+		<h3>You have no <strong>Assigned Projects</strong> <i class="em em-mailbox_with_no_mail"></i></h3>
+	
+    </div>
+</div>
+<!-- /.row -->
+@endif
 
 
-
+@if($projects)
 <div class="row">
     <div class="col-md-12">
         <div class="white-box">  
@@ -47,4 +57,5 @@
         </div>
     </div>
 </div>
+@endif
 @endsection
