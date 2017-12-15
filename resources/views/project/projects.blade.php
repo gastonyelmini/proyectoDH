@@ -31,7 +31,7 @@
 
               @if(!$projects->count())
                 <p class="alert alert-info">
-                  Cree su nuevo <a href="/add-project">Proyecto</a>
+                  Cree su nuevo <a href="/add-project" class="add-project-title">proyecto</a>
                 </p>
               @endif
 

@@ -27,6 +27,12 @@ body {
   fill: tomato;
 }
 
+/* Add project */
+.add-project-title {
+  color: #fff;
+  font-weight: bold;
+}
+
 /* Tablets */
 @media (min-width: 768px) {
 }
