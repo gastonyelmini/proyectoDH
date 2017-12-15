@@ -6,11 +6,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <title>Boole - The best way to organize your projects</title>
 
     <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
-    <title>Boole - The best way to organize your projects</title>
+    
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL::asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css') }}" rel="stylesheet">
@@ -45,75 +44,76 @@
     <link href="{{ URL::asset('plugins/bower_components/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet" />
-    
-    <style>
-		body {
-			font-family: sans-serif;
-			background: #ccc;
-		}
-		.container {
-			width: 80%;
-			margin: 0 auto;
-		}
-		.gantt-container {
-			overflow: scroll;
-		}
-		/* custom class */
-		.gantt .bar-milestone .bar-progress {
-			fill: tomato;
-		}
-	</style>
 
 </head>
 <body class="fix-header fix-sidebar">
+
     <!-- Preloader -->
     <div class="preloader">
         <div class="cssload-speeding-wheel"></div>
     </div>
-    <div id="wrapper">
-        
-        <!-- Left navbar-header -->
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
-                <div class="user-profile">
-                    <div class="dropdown user-pro-body">
-                        <div>
-                            <img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle">
-                        </div>
-                        <a id="username" href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}<span class="caret"></span></a>
-                        <ul class="dropdown-menu animated flipInY">
-                            <li>
-                                <a href="{{ route('edit-user') }}">
-                                <i class="ti-user"></i> My Profile</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <ul class="nav" id="side-menu">
-                    <li class="sidebar-search hidden-sm hidden-md hidden-lg">
-                        <!-- input-group -->
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search..."> <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
-                    </span> </div>
-                        <!-- /input-group -->
-                    </li>
-                    <li> <a href="{{ route('projects') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Projects</span></a> </li>
-                    <li> <a href="{{ route('assigned-projects') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Assigned Projects</span></a> </li>
-                    <li> <a href="{{ route('add-project') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Add project</span></a> </li>
 
-                    <li>
-                      <a href="{{ route('logout') }}"
-                          onclick="event.preventDefault();
-                                   document.getElementById('logout-form').submit();" class="waves-effect"><i data-icon="P" class="icon-logout fa-fw"></i> <span class="hide-menu">Logout</span></a>
-                          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                              {{ csrf_field() }}
-                          </form>
-                    </li>
-                </ul>
+    <div id="wrapper">
+    <!-- Left navbar-header -->
+    <div class="navbar-default sidebar" role="navigation">
+        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+            <div class="user-profile">
+                <div class="dropdown user-pro-body">
+                    <div>
+                        <img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle">
+                    </div>
+                    <a id="username" href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu animated flipInY">
+                        <li>
+                            <a href="{{ route('edit-user') }}">
+                            <i class="ti-user"></i> My Profile</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
+            <ul class="nav" id="side-menu">
+                <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                    <!-- input-group -->
+                    <div class="input-group custom-search-form">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="input-group-btn">
+                            <button class="btn btn-default" type="button"> 
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </span> 
+                    </div>
+                    <!-- /input-group -->
+                </li>
+                <li> 
+                    <a href="{{ route('projects') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> 
+                        <span class="hide-menu">My Projects</span>
+                    </a> 
+                </li>
+                <li> 
+                    <a href="{{ route('assigned-projects') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> 
+                        <span class="hide-menu">Assigned Projects</span>
+                    </a> 
+                </li>
+                <li> 
+                    <a href="{{ route('add-project') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> 
+                        <span class="hide-menu">Add project</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="waves-effect">
+                        <i data-icon="P" class="icon-logout fa-fw"></i> 
+                        <span class="hide-menu">Logout</span>
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </li>
+            </ul>
         </div>
-        <!-- Left navbar-header end -->
+    </div>
+    <!-- Left navbar-header end -->
 
     <div>
       <!-- Preloader -->

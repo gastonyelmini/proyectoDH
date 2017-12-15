@@ -9,6 +9,24 @@
 .no-friends h3 {
   text-align: center;
 }
+
+/* Gantt */
+body {
+  font-family: sans-serif;
+  background: #ccc;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+.gantt-container {
+  overflow: scroll;
+}
+/* custom class */
+.gantt .bar-milestone .bar-progress {
+  fill: tomato;
+}
+
 /* Tablets */
 @media (min-width: 768px) {
 }
