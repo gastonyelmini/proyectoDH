@@ -15,7 +15,7 @@
 <div class="row">
 	<div class="col-md-6">
 			<div class="white-box">
-					<div class="user-bg"> <img src="../plugins/images/large/" style="100%">
+					<div class="user-bg"> 
 							<div class="overlay-box">
 									<div class="user-content">
 											<a href="javascript:void(0)"><img alt="img" class="thumb-lg img-circle" src="/images/profile_images/{{$actualUser->avatar}}"></a>
