@@ -25,6 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $users_per_message = [];
         /*Todays weather*/
         $jsonWeather = file_get_contents("http://apidev.accuweather.com/currentconditions/v1/7894.json?language=en&apikey=hoArfRosT1215");
         $weather = json_decode($jsonWeather, true);
@@ -33,11 +34,23 @@ class HomeController extends Controller
         $tasksAsigned = count(DB::table('tasks_users')->where('id_user',auth()->user()->id)->get());
         $actualUser = Auth::User();
         $projects_user = count(DB::table('projects_users')->where("id_user", auth()->user()->id)->get());
+        
+        $messages = DB::table('messages')->get();
+        foreach($messages as $user) {
+            
+            $users_per_message [] = [
+                'users' =>DB::table('users')->where("id", $user->user_id)->get(),
+                'message' => $user
+            ];
+        }
+
         return view('home', [
             'activeProjects' => $activeProjects,
             'tasksAsigned' => $tasksAsigned,
             'actualUser' => $actualUser ,
-            'assignedProjects' => $projects_user
+            'assignedProjects' => $projects_user,
+            
+            'users_per_message' => $users_per_message,
         
             ], ['weather' => $weather]);
     }
