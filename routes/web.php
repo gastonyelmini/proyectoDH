@@ -37,6 +37,11 @@ Route::get('/update-task-progress/{id}/{newProg}/', [
     'uses' => 'ProjectDisplayController@updateProgress'
 ]);
 
+Route::get('/update-task-time/{id}/{start}/{end}', [
+    'middleware' => 'auth',
+    'uses' => 'ProjectDisplayController@updateTaskTime'
+]);
+
 Route::get('/add-project', [
     'middleware' => 'auth',
     'uses' => 'AddProjectController@showForm'

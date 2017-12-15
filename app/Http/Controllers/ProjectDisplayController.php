@@ -55,4 +55,12 @@ class ProjectDisplayController extends Controller
         ->update(['progress' => $newProg]);
     }
 
+    public function updateTaskTime(Request $request, $id, $start, $end) {
+        DB::table('tasks')
+        ->where('id', '=', $id)
+        ->update([
+            'from' => $start,
+            'to' => $end
+        ]);
+    }
 }

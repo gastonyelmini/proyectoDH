@@ -27,7 +27,20 @@ if (document.querySelector(".gantt-master")) {
             console.log(task);
           },
           on_date_change: function(task, start, end) {
-            console.log(task, start, end);
+            console.log(start);
+            axios
+              .get(
+                "/update-task-time/" +
+                  task["id"] +
+                  "/" +
+                  start["_i"] +
+                  "/" +
+                  end["_i"]
+              )
+              .then(function(response) {})
+              .catch(function(error) {
+                alert(error);
+              });
           },
           on_progress_change: function(task, progress) {
             axios
