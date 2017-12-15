@@ -115,7 +115,7 @@
 					<div class="row weather p-20">
 						<div class="col-md-6 col-xs-6 col-lg-6 col-s m-6 m-t-40">
 							<h3>&nbsp;</h3>
-							<h1>{{$weather[0]['Temperature']['Metric']['Value']}}<sup>°C</sup></h1>
+							<h1>{{round($weather[0]['Temperature']['Metric']['Value'])}}<sup>°C</sup></h1>
 							<p class="text-white">Buenos Aires, Argentina.</p>
 						</div>
 						<div class="col-md-6 col-xs-6 col-lg-6 col-sm-6 text-right"> <i class="wi wi-day-cloudy-high"></i>
