@@ -40,7 +40,7 @@
 							<ul class="el-info">
 								<!-- Ver perfil -->
 								<li>
-									<a class="btn default btn-outline image-popup-vertical-fit" href="/images/profile_images/{{$friend->avatar}}">
+									<a class="btn default btn-outline image-popup-vertical-fit" href="view-user/{{$friend->id}}">
 										<i class="fa fa-search" aria-hidden="true"></i>
 										View
 									</a>

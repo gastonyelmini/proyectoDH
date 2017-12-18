@@ -24,7 +24,7 @@
 							<ul class="el-info">
 								<!-- Ver perfil -->
 								<li>
-									<a class="btn default btn-outline image-popup-vertical-fit" href="/images/profile_images/{{$user->avatar}}">
+									<a class="btn default btn-outline image-popup-vertical-fit" href="view-user/{{$user->id}}">
 										<i class="fa fa-search" aria-hidden="true"></i>
 										View
 									</a>

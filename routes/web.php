@@ -76,6 +76,14 @@ Route::get('/assigned-projects', [
     'uses' => 'ProjectController@showAssignedProjects'
 ])->name('assigned-projects');
 
+/* 
+Display user 
+*/
+Route::get('/view-user/{id}', [
+    'middleware' => 'auth',
+    'uses' => 'DisplayUserController@displayUser'
+]);
+
 /*
 Rutas relacionadas con amigos
 */
