@@ -33,6 +33,13 @@ body {
   font-weight: bold;
 }
 
+/* Logo */
+.main-logo {
+  width: 95px;
+  margin-top: 1px;
+  margin-left: -10px;
+}
+
 /* Tablets */
 @media (min-width: 768px) {
 }

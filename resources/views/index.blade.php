@@ -2,17 +2,20 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Boole - Impulsá tu proyecto hoy</title>
+    <title>WeProject - Impulsá tu proyecto hoy</title>
     <meta name="description" content="Deje a un lado las hojas de cálculo sin actualizar, las notas rápidas y el software inadecuado para gestionar sus proyectos.">
     <link rel="stylesheet" href="styles/landing-style.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
     <script src="http://d3js.org/d3.v3.min.js"></script>
   </head>
   <body>
     <!-- header with logo log in and register buttons -->
     <header>
       <a href="index.php">
-        <div class="logo"></div>
+        <div class="logo">
+          <img src="logo-white.png" class="logoimage" alt="">
+        </div>
       </a>
       <div class="header-right">
         <div class="faq"><a href="/faq">Faq</a></div>
@@ -24,8 +27,8 @@
 
     <!-- landing's top -->
     <div class="topText ">
-      <h1>Boole es la manera gratuita y visual de organizar su proyecto.</h1>
-      <p>Deje a un lado las hojas de cálculo sin actualizar, las notas rápidas y el software inadecuado para gestionar sus proyectos. Boole le deja ver todo sobre su proyecto de un solo vistazo.</p>
+      <h1>WeProject es la manera gratuita y visual de organizar su proyecto.</h1>
+      <p>Deje a un lado las hojas de cálculo sin actualizar, las notas rápidas y el software inadecuado para gestionar sus proyectos. WeProject le deja ver todo sobre su proyecto de un solo vistazo.</p>
 
       <a class="green-register" href="/register">Regístrese. ¡Es gratis!</a>
 
@@ -44,7 +47,7 @@
     <div class="diagonal"></div>
     <div class="dinamic-diagonal-container">
         <img id="img-1" class="mockup-mac project" src="images/mockup-macbookAir.png" alt="boole-macbook">
-        <p id="p-1" class="mockup-text project">Esta es nuestra linea de Boole. Es una linea para visualizar los tiempos de tu proyecto.</p>
+        <p id="p-1" class="mockup-text project">Esta es nuestra linea de WeProject. Es una linea para visualizar los tiempos de tu proyecto.</p>
         <img id="img-2" class="mockup-ipad project" src="images/mockup-ipad.png" alt="boole-ipad">
     </div>
     <!-- END OF: mockups section -->
@@ -129,7 +132,7 @@
         <div class="infinite-line">
           <div class="red-line"></div>
         </div>
-        <p class="project"><strong>Boole posee herramientas intuitivas e interactivas  para visualizar los tiempos totales de su proyecto.</strong> Planifica proyectos, realiza el seguimiento del estado y colabora con otros usuarios fácilmente desde prácticamente cualquier lugar.</p>
+        <p class="project"><strong>WeProject posee herramientas intuitivas e interactivas  para visualizar los tiempos totales de su proyecto.</strong> Planifica proyectos, realiza el seguimiento del estado y colabora con otros usuarios fácilmente desde prácticamente cualquier lugar.</p>
         <img class="mini-line project" src="images/mockup-mini-line.png" alt="Mini Line">
       </div>
     </div>
@@ -139,14 +142,14 @@
     <footer>
       <div class="container">
         <p class="project"><strong>Descarte las notas rápidas, hojas de cálculo, correo
-electrónico y el software inadecuado</strong> para gestionar sus proyectos y pase a ser una de las personas que usan Boole. Puede añadir tantos tableros y tantas personas como desee con su cuenta gratuita.</p>
+electrónico y el software inadecuado</strong> para gestionar sus proyectos y pase a ser una de las personas que usan WeProject. Puede añadir tantos tableros y tantas personas como desee con su cuenta gratuita.</p>
       </div>
       <a class="green-register project" href="/register">Regístrese. ¡Es gratis!</a>
     </footer>
     <!-- END OF: Footer -->
 
     <div class="end positionIndex">
-      <p>© Copyright 2017, Boole, Inc. Todos los derechos reservados.</p>
+      <p>© Copyright 2017, WeProject, Inc. Todos los derechos reservados.</p>
     </div>
 
     <!-- call to JQUERY -->

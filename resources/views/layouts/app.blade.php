@@ -6,10 +6,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Boole - The best way to organize your projects</title>
+    <title>WeProject - The best way to organize your projects</title>
 
-    <link rel="icon" type="image/png" sizes="16x16" href="/logo.png">
-    
+    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL::asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css') }}" rel="stylesheet">
@@ -37,15 +37,20 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Multiselect -->
-    <link href="{{ URL::asset('plugins/bower_components/multiselect/css/multi-select.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::asset('plugins/bower_components/multiselect/css/multi-select.css') }}" rel="stylesheet" type="text/css"
+    />
     <!-- add project selector -->
-    <link href="{{ URL::asset('plugins/bower_components/custom-select/custom-select.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ URL::asset('plugins/bower_components/custom-select/custom-select.css') }}" rel="stylesheet" type="text/css"
+    />
     <link href="{{ URL::asset('plugins/bower_components/switchery/dist/switchery.min.css') }}" rel="stylesheet" />
     <link href="{{ URL::asset('plugins/bower_components/bootstrap-select/bootstrap-select.min.css') }}" rel="stylesheet" />
-    <link href="{{ URL::asset('plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}" rel="stylesheet" />
-    <link href="{{ URL::asset('plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet" />
+    <link href="{{ URL::asset('plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.css') }}" rel="stylesheet"
+    />
+    <link href="{{ URL::asset('plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css') }}" rel="stylesheet"
+    />
 
 </head>
+
 <body class="fix-header fix-sidebar">
 
     <!-- Preloader -->
@@ -54,316 +59,375 @@
     </div>
 
     <div id="wrapper">
-    <!-- Left navbar-header -->
-    <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse slimscrollsidebar">
-            <div class="user-profile">
-                <div class="dropdown user-pro-body">
-                    <div>
-                        <img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle">
-                    </div>
-                    <a id="username" href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu animated flipInY">
-                        <li>
-                            <a href="{{ route('edit-user') }}">
-                            <i class="ti-user"></i> My Profile</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <ul class="nav" id="side-menu">
-                <li class="sidebar-search hidden-sm hidden-md hidden-lg">
-                    <!-- input-group -->
-                    <div class="input-group custom-search-form">
-                        <input type="text" class="form-control" placeholder="Search...">
-                        <span class="input-group-btn">
-                            <button class="btn btn-default" type="button"> 
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span> 
-                    </div>
-                    <!-- /input-group -->
-                </li>
-                <li> 
-                    <a href="{{ route('projects') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> 
-                        <span class="hide-menu">My Projects</span>
-                    </a> 
-                </li>
-                <li> 
-                    <a href="{{ route('assigned-projects') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> 
-                        <span class="hide-menu">Assigned Projects</span>
-                    </a> 
-                </li>
-                <li> 
-                    <a href="{{ route('add-project') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> 
-                        <span class="hide-menu">Add project</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="waves-effect">
-                        <i data-icon="P" class="icon-logout fa-fw"></i> 
-                        <span class="hide-menu">Logout</span>
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        {{ csrf_field() }}
-                    </form>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- Left navbar-header end -->
-
-    <div>
-      <!-- Preloader -->
-      <div class="preloader">
-          <div class="cssload-speeding-wheel"></div>
-      </div>
-      <div id="wrapper">
-          <!-- Navigation -->
-          <nav class="navbar navbar-default navbar-static-top m-b-0">
-              <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-                  <div class="top-left-part"> <a class="logo" href="{{ route('home') }}"><b><!--This is dark logo icon--><img src="/logo.png" alt="home" class="dark-logo" /><!--This is light logo icon--><img src="/logo.png" alt="home" class="light-logo" style="width: 40px;"/></b><span class="hidden-xs"><!--This is dark logo text-->
-                    <img src="../plugins/images/eliteadmin-text.png" alt="home" class="dark-logo" /><!--This is light logo text--><p class="light-logo" style="color: #18699f; font-size: 20px; font-family: 'Syncopate', sans-serif;">BOOLE</p></span></a></div>
-                  <ul class="nav navbar-top-links navbar-left hidden-xs">
-                      <li><a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light"><i class="icon-arrow-left-circle ti-menu"></i></a></li>
-                      <li>
-                          <!-- <form role="search" class="app-search hidden-xs"> -->
-                              <!-- <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form> -->
-                      </li>
-                  </ul>
-                
-              </div>
-              <!-- /.navbar-header -->
-              <!-- /.navbar-top-links -->
-              <!-- /.navbar-static-side -->
-          </nav>
-          <!-- Left navbar-header -->
-          <div class="navbar-default sidebar" role="navigation">
-              <div class="sidebar-nav navbar-collapse slimscrollsidebar">
-                  <div class="user-profile">
-                      <div class="dropdown user-pro-body">
-                          <div>
-                            <a href="{{ route('edit-user') }}">
-                              <img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle">
-                            </a>
-                          </div>
-                          <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}
+        <!-- Left navbar-header -->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                <div class="user-profile">
+                    <div class="dropdown user-pro-body">
+                        <div>
+                            <img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle">
+                        </div>
+                        <a id="username" href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}
                             <span class="caret"></span>
-                          </a>
-                          <ul class="dropdown-menu animated flipInY">
-                              <li><a href="{{ route('edit-user') }}"><i class="ti-user"></i> My Profile</a></li>
-                          </ul>
-                      </div>
-                  </div>
-                  <ul class="nav" id="side-menu">
-                      <li class="sidebar-search hidden-sm hidden-md hidden-lg">
-                          <!-- input-group -->
-                          <div class="input-group custom-search-form">
-                              <input type="text" class="form-control" placeholder="Search..."> <span class="input-group-btn">
-                      <button class="btn btn-default" type="button"> <i class="fa fa-search"></i> </button>
-                      </span> </div>
-                          <!-- /input-group -->
-                      </li>
-                      <li> <a href="{{ route('projects') }}" class="waves-effect"><i data-icon="n" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Projects</span></a> </li>
-                      <li> <a href="{{ route('assigned-projects') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Assigned Projects</span></a> </li>
-                      <li> <a href="{{ route('add-project') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Add project</span></a> </li>
-                      <li> <a href="{{ route('friends') }}" class="waves-effect"><i data-icon="W" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">My Friends</span></a> </li>
-                      <li> <a href="{{ route('chat') }}" class="waves-effect"><i data-icon="-" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Chat</span></a> </li>
+                        </a>
+                        <ul class="dropdown-menu animated flipInY">
+                            <li>
+                                <a href="{{ route('edit-user') }}">
+                                    <i class="ti-user"></i> My Profile</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <ul class="nav" id="side-menu">
+                    <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                        <!-- input-group -->
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                        <!-- /input-group -->
+                    </li>
+                    <li>
+                        <a href="{{ route('projects') }}" class="waves-effect">
+                            <i data-icon="P" class="linea-icon linea-basic fa-fw"></i>
+                            <span class="hide-menu">My Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('assigned-projects') }}" class="waves-effect">
+                            <i data-icon="P" class="linea-icon linea-basic fa-fw"></i>
+                            <span class="hide-menu">Assigned Projects</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('add-project') }}" class="waves-effect">
+                            <i data-icon="P" class="linea-icon linea-basic fa-fw"></i>
+                            <span class="hide-menu">Add project</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="waves-effect">
+                            <i data-icon="P" class="icon-logout fa-fw"></i>
+                            <span class="hide-menu">Logout</span>
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Left navbar-header end -->
 
-                      <li>
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();" class="waves-effect"><i data-icon="P" class="icon-logout fa-fw"></i> <span class="hide-menu">Logout</span></a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                      </li>
-                  </ul>
-              </div>
-          </div>
-          <!-- Left navbar-header end -->
+        <div>
+            <!-- Preloader -->
+            <div class="preloader">
+                <div class="cssload-speeding-wheel"></div>
+            </div>
+            <div id="wrapper">
+                <!-- Navigation -->
+                <nav class="navbar navbar-default navbar-static-top m-b-0">
+                    <div class="navbar-header">
+                        <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse"
+                            data-target=".navbar-collapse">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <div class="top-left-part">
+                            <a class="logo" href="{{ route('home') }}">
+                                <b>
+                                    <!--This is dark logo icon-->
+                                    <img src="/logop1.png" alt="home" class="dark-logo" />
+                                    <!--This is light logo icon-->
+                                    <img src="/logop1.png" alt="home" class="light-logo" style="width: 40px;" />
+                                </b>
+                                <span class="hidden-xs">
+                                    <!--This is dark logo text-->
+                                    <img src="../plugins/images/eliteadmin-text.png" alt="home" class="dark-logo" />
+                                    <!--This is light logo text-->
+                                    <img src="logop2.png" alt="home" class="light-logo main-logo" />
+                                </span>
+                            </a>
+                        </div>
+                        <ul class="nav navbar-top-links navbar-left hidden-xs">
+                            <li>
+                                <a href="javascript:void(0)" class="open-close hidden-xs waves-effect waves-light">
+                                    <i class="icon-arrow-left-circle ti-menu"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <!-- <form role="search" class="app-search hidden-xs"> -->
+                                <!-- <input type="text" placeholder="Search..." class="form-control"> <a href=""><i class="fa fa-search"></i></a> </form> -->
+                            </li>
+                        </ul>
 
-      <!-- Page Content -->
-      <div id="page-wrapper">
-          <div class="container-fluid">
-              @yield('content')
-              <?php include 'php/right-sidebar.php';?>
-          </div>
-          <!-- /.container-fluid -->
-          <?php include 'php/footer.php';?>
-      </div>
-      <!-- /#page-wrapper -->
-      </div>
-      <!-- /#wrapper -->
-    </div>
+                    </div>
+                    <!-- /.navbar-header -->
+                    <!-- /.navbar-top-links -->
+                    <!-- /.navbar-static-side -->
+                </nav>
+                <!-- Left navbar-header -->
+                <div class="navbar-default sidebar" role="navigation">
+                    <div class="sidebar-nav navbar-collapse slimscrollsidebar">
+                        <div class="user-profile">
+                            <div class="dropdown user-pro-body">
+                                <div>
+                                    <a href="{{ route('edit-user') }}">
+                                        <img id="user-avatar" src="/images/profile_images/{{Auth::user()->avatar}}" alt="user-img" class="img-circle">
+                                    </a>
+                                </div>
+                                <a href="#" class="dropdown-toggle u-dropdown" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{Auth::user()->name}}
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu animated flipInY">
+                                    <li>
+                                        <a href="{{ route('edit-user') }}">
+                                            <i class="ti-user"></i> My Profile</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <ul class="nav" id="side-menu">
+                            <li class="sidebar-search hidden-sm hidden-md hidden-lg">
+                                <!-- input-group -->
+                                <div class="input-group custom-search-form">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default" type="button">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </div>
+                                <!-- /input-group -->
+                            </li>
+                            <li>
+                                <a href="{{ route('projects') }}" class="waves-effect">
+                                    <i data-icon="n" class="linea-icon linea-basic fa-fw"></i>
+                                    <span class="hide-menu">My Projects</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('assigned-projects') }}" class="waves-effect">
+                                    <i data-icon="P" class="linea-icon linea-basic fa-fw"></i>
+                                    <span class="hide-menu">Assigned Projects</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('add-project') }}" class="waves-effect">
+                                    <i data-icon="P" class="linea-icon linea-basic fa-fw"></i>
+                                    <span class="hide-menu">Add project</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('friends') }}" class="waves-effect">
+                                    <i data-icon="W" class="linea-icon linea-basic fa-fw"></i>
+                                    <span class="hide-menu">My Friends</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('chat') }}" class="waves-effect">
+                                    <i data-icon="-" class="linea-icon linea-basic fa-fw"></i>
+                                    <span class="hide-menu">Chat</span>
+                                </a>
+                            </li>
 
-    <!-- Axios Vue -->
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="https://unpkg.com/vue"></script>
+                            <li>
+                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                     document.getElementById('logout-form').submit();" class="waves-effect">
+                                    <i data-icon="P" class="icon-logout fa-fw"></i>
+                                    <span class="hide-menu">Logout</span>
+                                </a>
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Left navbar-header end -->
 
-    <script src="{{ URL::asset('/js/app.js') }}"></script>
-    <script src="{{ URL::asset('/js/ajaxRequests.js') }}"></script>
-    <script src="{{ URL::asset('js/deleteProjectController.js') }}"></script>
-    
+                <!-- Page Content -->
+                <div id="page-wrapper">
+                    <div class="container-fluid">
+                        @yield('content')
+                        <?php include 'php/right-sidebar.php';?>
+                    </div>
+                    <!-- /.container-fluid -->
+                    <?php include 'php/footer.php';?>
+                </div>
+                <!-- /#page-wrapper -->
+            </div>
+            <!-- /#wrapper -->
+        </div>
 
-    <!-- jQuery -->
-    <script src="{{ URL::asset('plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ URL::asset('bootstrap/dist/js/tether.min.js') }}"></script>
-    <script src="{{ URL::asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <script src="{{ URL::asset('plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js') }}"></script>
-    <!-- Menu Plugin JavaScript -->
-    <script src="{{ URL::asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js') }}"></script>
-    <!--slimscroll JavaScript -->
-    <script src="{{ URL::asset('js/jquery.slimscroll.js') }}"></script>
-    <!--Wave Effects -->
-    <script src="{{ URL::asset('js/waves.js') }}"></script>
-    <!--Counter js -->
-    <script src="{{ URL::asset('plugins/bower_components/waypoints/lib/jquery.waypoints.js') }}"></script>
-    <script src="{{ URL::asset('plugins/bower_components/counterup/jquery.counterup.min.js') }}"></script>
-    <!--Morris JavaScript -->
-    <script src="{{ URL::asset('plugins/bower_components/raphael/raphael-min.js') }}"></script>
-    <script src="{{ URL::asset('plugins/bower_components/morrisjs/morris.js') }}"></script>
-    <!-- Custom Theme JavaScript -->
-    <script src="{{ URL::asset('js/custom.min.js') }}"></script>
-    <script src="{{ URL::asset('js/dashboard1.js') }}"></script>
-    <!-- Sparkline chart JavaScript -->
-    <script src="{{ URL::asset('plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
-    <script src="{{ URL::asset('plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js') }}"></script>
-    <script src="{{ URL::asset('plugins/bower_components/toast-master/js/jquery.toast.js') }}"></script>
-    <!-- jQuery file upload -->
-    <script src="{{ URL::asset('plugins/bower_components/dropify/dist/js/dropify.min.js') }}"></script>
-    <script>
-        $(document).ready(function () {
-            // Basic
-            $('.dropify').dropify();
-            // Translated
-            $('.dropify-fr').dropify({
-                messages: {
-                    default: 'Glissez-déposez un fichier ici ou cliquez'
-                    , replace: 'Glissez-déposez un fichier ou cliquez pour remplacer'
-                    , remove: 'Supprimer'
-                    , error: 'Désolé, le fichier trop volumineux'
-                }
-            });
-            // Used events
-            var drEvent = $('#input-file-events').dropify();
-            drEvent.on('dropify.beforeClear', function (event, element) {
-                return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
-            });
-            drEvent.on('dropify.afterClear', function (event, element) {
-                alert('File deleted');
-            });
-            drEvent.on('dropify.errors', function (event, element) {
-                console.log('Has Errors');
-            });
-            var drDestroy = $('#input-file-to-destroy').dropify();
-            drDestroy = drDestroy.data('dropify')
-            $('#toggleDropify').on('click', function (e) {
-                e.preventDefault();
-                if (drDestroy.isDropified()) {
-                    drDestroy.destroy();
-                }
-                else {
-                    drDestroy.init();
-                }
-            })
-        });
-    </script>
+        <!-- Axios Vue -->
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/vue"></script>
 
-    <!-- multiselect -->
-    <script src="{{ URL::asset('plugins/bower_components/switchery/dist/switchery.min.js') }}"></script>
-    <script src="{{ URL::asset('plugins/bower_components/custom-select/custom-select.min.js') }}" type="text/javascript"></script>
-    <script src="{{ URL::asset('plugins/bower_components/bootstrap-select/bootstrap-select.min.js') }}" type="text/javascript"></script>
-    <script src="{{ URL::asset('plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
-    <script src="{{ URL::asset('plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js') }}" type="text/javascript"></script>
-    <script type="text/javascript" src="{{ URL::asset('plugins/bower_components/multiselect/js/jquery.multi-select.js') }}"></script>
-    <script>
-        jQuery(document).ready(function () {
-            // Switchery
-            var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
-            $('.js-switch').each(function () {
-                new Switchery($(this)[0], $(this).data());
-            });
-            // For select 2
-            $(".select2").select2();
-            $('.selectpicker').selectpicker();
-            //Bootstrap-TouchSpin
-            $(".vertical-spin").TouchSpin({
-                verticalbuttons: true
-                , verticalupclass: 'ti-plus'
-                , verticaldownclass: 'ti-minus'
-            });
-            var vspinTrue = $(".vertical-spin").TouchSpin({
-                verticalbuttons: true
-            });
-            if (vspinTrue) {
-                $('.vertical-spin').prev('.bootstrap-touchspin-prefix').remove();
-            }
-            $("input[name='tch1']").TouchSpin({
-                min: 0
-                , max: 100
-                , step: 0.1
-                , decimals: 2
-                , boostat: 5
-                , maxboostedstep: 10
-                , postfix: '%'
-            });
-            $("input[name='tch2']").TouchSpin({
-                min: -1000000000
-                , max: 1000000000
-                , stepinterval: 50
-                , maxboostedstep: 10000000
-                , prefix: '$'
-            });
-            $("input[name='tch3']").TouchSpin();
-            $("input[name='tch3_22']").TouchSpin({
-                initval: 40
-            });
-            $("input[name='tch5']").TouchSpin({
-                prefix: "pre"
-                , postfix: "post"
-            });
-            // For multiselect
-            $('#pre-selected-options').multiSelect();
-            $('#optgroup').multiSelect({
-                selectableOptgroup: true
-            });
-            $('#public-methods').multiSelect();
-            $('#select-all').click(function () {
-                $('#public-methods').multiSelect('select_all');
-                return false;
-            });
-            $('#deselect-all').click(function () {
-                $('#public-methods').multiSelect('deselect_all');
-                return false;
-            });
-            $('#refresh').on('click', function () {
-                $('#public-methods').multiSelect('refresh');
-                return false;
-            });
-            $('#add-option').on('click', function () {
-                $('#public-methods').multiSelect('addOption', {
-                    value: 42
-                    , text: 'test 42'
-                    , index: 0
+        <script src="{{ URL::asset('/js/app.js') }}"></script>
+        <script src="{{ URL::asset('/js/ajaxRequests.js') }}"></script>
+        <script src="{{ URL::asset('js/deleteProjectController.js') }}"></script>
+
+
+        <!-- jQuery -->
+        <script src="{{ URL::asset('plugins/bower_components/jquery/dist/jquery.min.js') }}"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ URL::asset('bootstrap/dist/js/tether.min.js') }}"></script>
+        <script src="{{ URL::asset('bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        <script src="{{ URL::asset('plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js') }}"></script>
+        <!-- Menu Plugin JavaScript -->
+        <script src="{{ URL::asset('plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js') }}"></script>
+        <!--slimscroll JavaScript -->
+        <script src="{{ URL::asset('js/jquery.slimscroll.js') }}"></script>
+        <!--Wave Effects -->
+        <script src="{{ URL::asset('js/waves.js') }}"></script>
+        <!--Counter js -->
+        <script src="{{ URL::asset('plugins/bower_components/waypoints/lib/jquery.waypoints.js') }}"></script>
+        <script src="{{ URL::asset('plugins/bower_components/counterup/jquery.counterup.min.js') }}"></script>
+        <!--Morris JavaScript -->
+        <script src="{{ URL::asset('plugins/bower_components/raphael/raphael-min.js') }}"></script>
+        <script src="{{ URL::asset('plugins/bower_components/morrisjs/morris.js') }}"></script>
+        <!-- Custom Theme JavaScript -->
+        <script src="{{ URL::asset('js/custom.min.js') }}"></script>
+        <script src="{{ URL::asset('js/dashboard1.js') }}"></script>
+        <!-- Sparkline chart JavaScript -->
+        <script src="{{ URL::asset('plugins/bower_components/jquery-sparkline/jquery.sparkline.min.js') }}"></script>
+        <script src="{{ URL::asset('plugins/bower_components/jquery-sparkline/jquery.charts-sparkline.js') }}"></script>
+        <script src="{{ URL::asset('plugins/bower_components/toast-master/js/jquery.toast.js') }}"></script>
+        <!-- jQuery file upload -->
+        <script src="{{ URL::asset('plugins/bower_components/dropify/dist/js/dropify.min.js') }}"></script>
+        <script>
+            $(document).ready(function () {
+                // Basic
+                $('.dropify').dropify();
+                // Translated
+                $('.dropify-fr').dropify({
+                    messages: {
+                        default: 'Glissez-déposez un fichier ici ou cliquez'
+                        , replace: 'Glissez-déposez un fichier ou cliquez pour remplacer'
+                        , remove: 'Supprimer'
+                        , error: 'Désolé, le fichier trop volumineux'
+                    }
                 });
-                return false;
+                // Used events
+                var drEvent = $('#input-file-events').dropify();
+                drEvent.on('dropify.beforeClear', function (event, element) {
+                    return confirm("Do you really want to delete \"" + element.file.name + "\" ?");
+                });
+                drEvent.on('dropify.afterClear', function (event, element) {
+                    alert('File deleted');
+                });
+                drEvent.on('dropify.errors', function (event, element) {
+                    console.log('Has Errors');
+                });
+                var drDestroy = $('#input-file-to-destroy').dropify();
+                drDestroy = drDestroy.data('dropify')
+                $('#toggleDropify').on('click', function (e) {
+                    e.preventDefault();
+                    if (drDestroy.isDropified()) {
+                        drDestroy.destroy();
+                    }
+                    else {
+                        drDestroy.init();
+                    }
+                })
             });
-        });
-    </script>
-    
-    <!-- Gantt controller -->
-    <script src="{{ URL::asset('/js/moment/min/moment.min.js') }}"></script>
-    <script src="{{ URL::asset('/js/snapsvg/dist/snap.svg-min.js') }}"></script>
-    <script src="{{ URL::asset('/js/frappe-gantt/dist/frappe-gantt.js') }}"></script>
-    <script src="{{ URL::asset('/js/frappe-gantt/controller/gant_controller.js') }}"></script>
-    
-    <!-- Tasks collaborators pie chart -->
-    <script src="{{ URL::asset('plugins/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js')}}"></script>
-    <script src="{{ URL::asset('plugins/bower_components/jquery.easy-pie-chart/easy-pie-chart.init.js')}}"></script>
+        </script>
+
+        <!-- multiselect -->
+        <script src="{{ URL::asset('plugins/bower_components/switchery/dist/switchery.min.js') }}"></script>
+        <script src="{{ URL::asset('plugins/bower_components/custom-select/custom-select.min.js') }}" type="text/javascript"></script>
+        <script src="{{ URL::asset('plugins/bower_components/bootstrap-select/bootstrap-select.min.js') }}" type="text/javascript"></script>
+        <script src="{{ URL::asset('plugins/bower_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js') }}"></script>
+        <script src="{{ URL::asset('plugins/bower_components/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js') }}" type="text/javascript"></script>
+        <script type="text/javascript" src="{{ URL::asset('plugins/bower_components/multiselect/js/jquery.multi-select.js') }}"></script>
+        <script>
+            jQuery(document).ready(function () {
+                // Switchery
+                var elems = Array.prototype.slice.call(document.querySelectorAll('.js-switch'));
+                $('.js-switch').each(function () {
+                    new Switchery($(this)[0], $(this).data());
+                });
+                // For select 2
+                $(".select2").select2();
+                $('.selectpicker').selectpicker();
+                //Bootstrap-TouchSpin
+                $(".vertical-spin").TouchSpin({
+                    verticalbuttons: true
+                    , verticalupclass: 'ti-plus'
+                    , verticaldownclass: 'ti-minus'
+                });
+                var vspinTrue = $(".vertical-spin").TouchSpin({
+                    verticalbuttons: true
+                });
+                if (vspinTrue) {
+                    $('.vertical-spin').prev('.bootstrap-touchspin-prefix').remove();
+                }
+                $("input[name='tch1']").TouchSpin({
+                    min: 0
+                    , max: 100
+                    , step: 0.1
+                    , decimals: 2
+                    , boostat: 5
+                    , maxboostedstep: 10
+                    , postfix: '%'
+                });
+                $("input[name='tch2']").TouchSpin({
+                    min: -1000000000
+                    , max: 1000000000
+                    , stepinterval: 50
+                    , maxboostedstep: 10000000
+                    , prefix: '$'
+                });
+                $("input[name='tch3']").TouchSpin();
+                $("input[name='tch3_22']").TouchSpin({
+                    initval: 40
+                });
+                $("input[name='tch5']").TouchSpin({
+                    prefix: "pre"
+                    , postfix: "post"
+                });
+                // For multiselect
+                $('#pre-selected-options').multiSelect();
+                $('#optgroup').multiSelect({
+                    selectableOptgroup: true
+                });
+                $('#public-methods').multiSelect();
+                $('#select-all').click(function () {
+                    $('#public-methods').multiSelect('select_all');
+                    return false;
+                });
+                $('#deselect-all').click(function () {
+                    $('#public-methods').multiSelect('deselect_all');
+                    return false;
+                });
+                $('#refresh').on('click', function () {
+                    $('#public-methods').multiSelect('refresh');
+                    return false;
+                });
+                $('#add-option').on('click', function () {
+                    $('#public-methods').multiSelect('addOption', {
+                        value: 42
+                        , text: 'test 42'
+                        , index: 0
+                    });
+                    return false;
+                });
+            });
+        </script>
+
+        <!-- Gantt controller -->
+        <script src="{{ URL::asset('/js/moment/min/moment.min.js') }}"></script>
+        <script src="{{ URL::asset('/js/snapsvg/dist/snap.svg-min.js') }}"></script>
+        <script src="{{ URL::asset('/js/frappe-gantt/dist/frappe-gantt.js') }}"></script>
+        <script src="{{ URL::asset('/js/frappe-gantt/controller/gant_controller.js') }}"></script>
+
+        <!-- Tasks collaborators pie chart -->
+        <script src="{{ URL::asset('plugins/bower_components/jquery.easy-pie-chart/dist/jquery.easypiechart.min.js')}}"></script>
+        <script src="{{ URL::asset('plugins/bower_components/jquery.easy-pie-chart/easy-pie-chart.init.js')}}"></script>
 
 </body>
 
