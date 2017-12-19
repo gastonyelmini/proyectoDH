@@ -12,6 +12,13 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+/* 
+FAQ 
+*/
+Route::get('/faq', function () {
+    return view('faq');
+});
+
 /*
 Rutas realacionadas con editar usuario
 */

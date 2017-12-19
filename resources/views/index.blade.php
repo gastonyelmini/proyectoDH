@@ -15,7 +15,7 @@
         <div class="logo"></div>
       </a>
       <div class="header-right">
-        <div class="faq"><a href="faq.html">Faq</a></div>
+        <div class="faq"><a href="/faq">Faq</a></div>
         <div class="logIn"><a href="/login">Ingresar</a></div>
         <div class="register"><a href="/register">Registrarse</a></div>
       </div>
