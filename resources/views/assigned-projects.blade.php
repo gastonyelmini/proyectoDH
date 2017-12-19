@@ -28,7 +28,7 @@
     <div class="col-md-12">
         <div class="white-box">  
             @foreach($projects as $project)
-
+            @if($project[0])
             <div id="{{ $project[0]->id }}" class="comment-center">
                             <div class="comment-body">
                                 <div class="user-img"> <img src="/images/profile_images/{{Auth::user()->avatar}}" alt="user" class="img-circle"></div>
@@ -53,6 +53,8 @@
                                     <span class="time pull-right">{{date('d-m-Y', strtotime($project[0]->created_at))}}</span></div>
                             </div>
                         </div>
+
+                @endif
             @endforeach
         </div>
     </div>
