@@ -6,9 +6,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>WeProject - The best way to organize your projects</title>
+    <title>WeProject - The best way to organize your projects.</title>
 
-    <link rel="shortcut icon" type="image/png" href="favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="{{URL::asset('favicon.png')}}"/>
 
     <!-- Bootstrap Core CSS -->
     <link href="{{ URL::asset('bootstrap/dist/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -140,15 +140,15 @@
                             <a class="logo" href="{{ route('home') }}">
                                 <b>
                                     <!--This is dark logo icon-->
-                                    <img src="/logop1.png" alt="home" class="dark-logo" />
+                                    <img src="{{URL::asset('logop1.png')}}" alt="home" class="dark-logo" />
                                     <!--This is light logo icon-->
-                                    <img src="/logop1.png" alt="home" class="light-logo" style="width: 40px;" />
+                                    <img src="{{URL::asset('logop1.png')}}" alt="home" class="light-logo" style="width: 40px;" />
                                 </b>
                                 <span class="hidden-xs">
                                     <!--This is dark logo text-->
                                     <img src="../plugins/images/eliteadmin-text.png" alt="home" class="dark-logo" />
                                     <!--This is light logo text-->
-                                    <img src="logop2.png" alt="home" class="light-logo main-logo" />
+                                    <img src="{{URL::asset('logop2.png')}}" alt="home" class="light-logo main-logo" />
                                 </span>
                             </a>
                         </div>
