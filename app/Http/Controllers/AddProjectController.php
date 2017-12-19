@@ -86,7 +86,7 @@ class AddProjectController extends Controller
         'to' => $request['to'],
         'author_id' => auth()->user()->id,
         'project_id' => $request['project_id'],
-        'progress' => 0
+        'progress' => 1
       ]);
       
       if($request['selectedFriends']) {

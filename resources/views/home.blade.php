@@ -120,7 +120,7 @@
 						</div>
 						<div class="col-md-6 col-xs-6 col-lg-6 col-sm-6 text-right"> <i class="wi wi-day-cloudy-high"></i>
 							<br/>
-							<br/> <b class="text-white">{{$weather[0]['WeatherText']}}</b>
+							<br/> <b class = "text-white">{{$weather[0]['WeatherText']}}</b>
 							<p class="w-title-sub">{{date('l \t\h\e jS')}}</p>
 						</div>
 					</div>
@@ -134,25 +134,30 @@
 	<div class="col-md-12 col-lg-6 col-sm-12">
 		<div class="white-box">
 			<h3 class="box-title">Recent Comments</h3>
-			<div class="comment-center">
-                @foreach($users_per_message as $user)
+			@if(count($users_per_message) == 0)
 				<div class="comment-body">
-					<div class="user-img">
-						<img src="/images/profile_images/{{ $user['users'][0]->avatar }}" alt="user" class="img-circle">
-					</div>
-					<div class="mail-contnet"> 
-						<h5>{{ $user['users'][0]->name }}</h5>  
-                        <span class="mail-desc">{{ $user['message']->message }}</span>  
-                        <span class="label label-rounded label-info">{{ $user['message']->created_at }}</span>
-					</div>
-				</div>
-                @endforeach
-                @if(count($users_per_message) == 0)
-                <div class="comment-body">
 					<h5>No messages yet! <i class="em em-mailbox_with_mail"></i></h5>
 				</div>
-                @endif
+			@endif
+			@if(count($users_per_message) != 0)
+			<div class="comment-center">
+        @foreach($users_per_message as $user)
+					<div class="comment-body">
+						<div class="user-img">
+							@if($user['users'][0]->avatar)
+								<img src="/images/profile_images/{{ $user['users'][0]->avatar }}" alt="user" class="img-circle">
+							@endif
+						</div>
+						<div class="mail-contnet"> 
+							<h5>{{ $user['users'][0]->name }}</h5>  
+							<span class="mail-desc">{{ $user['message']->message }}</span>  
+							<span class="label label-rounded label-info">{{ $user['message']->created_at }}</span>
+						</div>
+					</div>
+				@endforeach
 			</div>
+			@endif
+			
 		</div>
 	</div>
 </div>
