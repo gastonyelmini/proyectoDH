@@ -17,7 +17,7 @@ class ProjectController extends Controller
       $projects = [];
       $projects_user = DB::table('projects_users')->where("id_user", auth()->user()->id)->get();
       foreach($projects_user as $projectFind) {
-        if(count($projectFind) != 0) {
+        if($projectFind) {
           $projects [] = DB::table('projects')->where("id", $projectFind->id_project)->get();
         }
       }
